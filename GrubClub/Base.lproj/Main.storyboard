@@ -185,6 +185,25 @@
             </objects>
             <point key="canvasLocation" x="-1723" y="-108"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ylq-Hv-nDg">
+            <objects>
+                <viewController id="c8G-zx-pDe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="szx-wz-hpV"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHo-8J-cOI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iRl-0o-FVc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nLx-XZ-0d7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTG-NS-A7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1167" y="153"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="hai-Rq-b7I">
             <objects>
@@ -211,13 +230,16 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aF6-Wi-ecH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aF6-Wi-ecH">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aF6-Wi-ecH" id="z4C-u3-rxD">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="c8G-zx-pDe" kind="push" id="MIB-8a-T60"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -239,8 +261,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="8yr-8O-iI0">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Friend Requests" id="rJy-yB-j86">
+                                    <barButtonItem key="rightBarButtonItem" title="Search" id="QZe-ah-09A">
+                                        <connections>
+                                            <segue destination="aJb-cv-mVQ" kind="push" id="b0X-v6-jBj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="84H-hS-LiR">
-                            <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Add Friends">
                                 <color key="titleColor" red="0.91089928669999998" green="0.17009295739999999" blue="0.14953543790000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,7 +284,7 @@
                         </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KYp-97-kVb">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYp-97-kVb" id="5TO-zI-uoG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -266,7 +301,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCw-sY-dyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1345" y="591"/>
+            <point key="canvasLocation" x="-1196" y="1015"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="uvW-RA-8OC">
@@ -281,6 +316,13 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DLL-cL-6cd">
+                            <rect key="frame" x="0.0" y="568" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Add Users">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="A04-1g-4Wd">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
@@ -296,10 +338,11 @@
                             <outlet property="delegate" destination="aJb-cv-mVQ" id="bZP-T7-yfM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="rUc-YU-5jx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofW-8c-IQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1003" y="586"/>
+            <point key="canvasLocation" x="-851" y="1034"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zDU-ZC-Ebo">
