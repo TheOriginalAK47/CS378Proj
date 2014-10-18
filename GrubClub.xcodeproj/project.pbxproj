@@ -21,6 +21,9 @@
 		265C19C519F3244F009358C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A719F3244F009358C2 /* UIKit.framework */; };
 		265C19CD19F3244F009358C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265C19CB19F3244F009358C2 /* InfoPlist.strings */; };
 		265C19CF19F3244F009358C2 /* GrubClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19CE19F3244F009358C2 /* GrubClubTests.m */; };
+		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
+		779152E619F3352200E3846C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E319F3352200E3846C /* Parse.framework */; };
+		779152E719F3352200E3846C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E419F3352200E3846C /* ParseFacebookUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		265C19CA19F3244F009358C2 /* GrubClubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrubClubTests-Info.plist"; sourceTree = "<group>"; };
 		265C19CC19F3244F009358C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		265C19CE19F3244F009358C2 /* GrubClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrubClubTests.m; sourceTree = "<group>"; };
+		779152E219F3352200E3846C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		779152E319F3352200E3846C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		779152E419F3352200E3846C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,10 @@
 			files = (
 				265C19A619F3244F009358C2 /* CoreGraphics.framework in Frameworks */,
 				265C19A819F3244F009358C2 /* UIKit.framework in Frameworks */,
+				779152E719F3352200E3846C /* ParseFacebookUtils.framework in Frameworks */,
 				265C19A419F3244F009358C2 /* Foundation.framework in Frameworks */,
+				779152E519F3352200E3846C /* Bolts.framework in Frameworks */,
+				779152E619F3352200E3846C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +110,9 @@
 		265C19A219F3244F009358C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				779152E219F3352200E3846C /* Bolts.framework */,
+				779152E319F3352200E3846C /* Parse.framework */,
+				779152E419F3352200E3846C /* ParseFacebookUtils.framework */,
 				265C19A319F3244F009358C2 /* Foundation.framework */,
 				265C19A519F3244F009358C2 /* CoreGraphics.framework */,
 				265C19A719F3244F009358C2 /* UIKit.framework */,
@@ -376,6 +388,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
 				INFOPLIST_FILE = "GrubClub/GrubClub-Info.plist";
@@ -389,6 +405,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
 				INFOPLIST_FILE = "GrubClub/GrubClub-Info.plist";
@@ -456,6 +476,7 @@
 				265C19D419F3244F009358C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		265C19D519F3244F009358C2 /* Build configuration list for PBXNativeTarget "GrubClubTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +485,7 @@
 				265C19D719F3244F009358C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

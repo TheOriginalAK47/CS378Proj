@@ -10,29 +10,29 @@
 	<string>GrubClub</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DFE68FAF-0F40-40F1-98A6-1A78BA42E835</key>
+		<key>A71ED131AB8EE80E8834D2C3922899AB345082BD</key>
 		<string>https://github.com/TheOriginalAK47/CS378Proj</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GrubClub.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DFE68FAF-0F40-40F1-98A6-1A78BA42E835</key>
+		<key>A71ED131AB8EE80E8834D2C3922899AB345082BD</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/TheOriginalAK47/CS378Proj</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DFE68FAF-0F40-40F1-98A6-1A78BA42E835</string>
+	<string>A71ED131AB8EE80E8834D2C3922899AB345082BD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DFE68FAF-0F40-40F1-98A6-1A78BA42E835</string>
+			<string>A71ED131AB8EE80E8834D2C3922899AB345082BD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CS378Proj</string>
 		</dict>
