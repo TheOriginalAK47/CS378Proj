@@ -40,6 +40,8 @@
     user.username = self.userName.text;
     user.password = self.userPassword.text;
     user.email = self.userEmail.text;
+
+ 
     
     // other fields can be set just like with PFObject
     user[@"personalName"] = self.personalName.text;

@@ -34,6 +34,7 @@
 		779152F719F3369B00E3846C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152F619F3369B00E3846C /* StoreKit.framework */; };
 		779152F919F336A500E3846C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152F819F336A500E3846C /* SystemConfiguration.framework */; };
 		779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779152FB19F338EA00E3846C /* SignUpViewController.m */; };
+		779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779152FE19F33E9C00E3846C /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		779152F819F336A500E3846C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		779152FA19F338EA00E3846C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		779152FB19F338EA00E3846C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		779152FD19F33E9C00E3846C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		779152FE19F33E9C00E3846C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 				265C19B519F3244F009358C2 /* Main.storyboard */,
 				265C19B819F3244F009358C2 /* ViewController.h */,
 				265C19B919F3244F009358C2 /* ViewController.m */,
+				779152FD19F33E9C00E3846C /* LoginViewController.h */,
+				779152FE19F33E9C00E3846C /* LoginViewController.m */,
 				779152FA19F338EA00E3846C /* SignUpViewController.h */,
 				779152FB19F338EA00E3846C /* SignUpViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
@@ -306,6 +311,7 @@
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,
 				265C19B019F3244F009358C2 /* main.m in Sources */,
+				779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
