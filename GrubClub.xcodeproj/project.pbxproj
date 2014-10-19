@@ -35,6 +35,7 @@
 		779152F919F336A500E3846C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152F819F336A500E3846C /* SystemConfiguration.framework */; };
 		779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779152FB19F338EA00E3846C /* SignUpViewController.m */; };
 		779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779152FE19F33E9C00E3846C /* LoginViewController.m */; };
+		7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791530119F348FE00E3846C /* forgotPwViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		779152FB19F338EA00E3846C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		779152FD19F33E9C00E3846C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		779152FE19F33E9C00E3846C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7791530019F348FE00E3846C /* forgotPwViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgotPwViewController.h; sourceTree = "<group>"; };
+		7791530119F348FE00E3846C /* forgotPwViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgotPwViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 				779152FE19F33E9C00E3846C /* LoginViewController.m */,
 				779152FA19F338EA00E3846C /* SignUpViewController.h */,
 				779152FB19F338EA00E3846C /* SignUpViewController.m */,
+				7791530019F348FE00E3846C /* forgotPwViewController.h */,
+				7791530119F348FE00E3846C /* forgotPwViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
 				265C19AA19F3244F009358C2 /* Supporting Files */,
 			);
@@ -307,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
 				265C19BA19F3244F009358C2 /* ViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,
