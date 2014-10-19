@@ -18,11 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_personalName setDelegate:self];
+    [_userEmail setDelegate:self];
+    [_userName setDelegate:self];
+    [_userPassword setDelegate:self];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    // Indicate we're done with the keyboard. Make it go away.
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*

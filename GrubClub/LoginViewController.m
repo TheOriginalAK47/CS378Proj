@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_userPassword setDelegate:self];
+    [_userName setDelegate:self];
+    
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    // Indicate we're done with the keyboard. Make it go away.
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,10 +49,19 @@
     [PFUser logInWithUsernameInBackground:self.userName.text password:self.userPassword.text block:^(PFUser *user, NSError *error) {
         if (user) {
             // Do stuff after successful login.
+            //test
+            UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *viewController = [main instantiateViewControllerWithIdentifier:@"FriendListVC"];
+            [self presentViewController:viewController animated:YES completion:nil];
             NSLog(@"User login successful");
-        } else {
+        }
+        else {
             // The login failed. Check error to see why.
             NSLog(@"Login failed");
+            UIAlertView *LoginFailed = [[UIAlertView alloc]initWithTitle:@"Incorrect Login" message:@"The username or password you entered was incorrect. Please try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            [LoginFailed show];
+            
+            
         }}];
     
 

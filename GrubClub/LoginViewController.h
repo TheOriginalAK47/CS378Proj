@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
 - (IBAction)loginButtonAction:(id)sender;
