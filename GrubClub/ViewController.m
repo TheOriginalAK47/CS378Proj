@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewController ()
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /* Testing whether or not app is communicating with SDK 8? */
+    /*  A new object of class TestObject will be sent to the Parse Cloud and saved */
+    /* https://www.parse.com/apps/quickstart#parse_data/mobile/ios/native/existing */
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
