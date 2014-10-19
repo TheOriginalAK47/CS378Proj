@@ -49,7 +49,23 @@
     [PFUser logInWithUsernameInBackground:self.userName.text password:self.userPassword.text block:^(PFUser *user, NSError *error) {
         if (user) {
             // Do stuff after successful login.
-            //test
+            
+            //set currentUser to pass later maybe
+            _currentUser = user;
+//            NSLog(@"Current user: %@" , _currentUser.username);
+            
+            
+            if (![[_currentUser objectForKey:@"emailVerified"] boolValue]) {
+                // Refresh to make sure the user did not recently verify
+//                [_currentUser fetch]; /*this causes a warning
+                if (![[user objectForKey:@"emailVerified"] boolValue]) {
+                    UIAlertView *emailUnverified = [[UIAlertView alloc]initWithTitle:@"Email Verification Failed" message:@"Please verify your email address." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                    [emailUnverified show];
+//                    [self redirectWithMessage:@"You must verify your email address for cake"];
+                    return;
+                }
+            }
+            
             UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *viewController = [main instantiateViewControllerWithIdentifier:@"FriendListVC"];
             [self presentViewController:viewController animated:YES completion:nil];
