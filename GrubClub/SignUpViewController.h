@@ -13,10 +13,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
-- (IBAction)submitInformation:(id)sender;
+-(IBAction)submitInformation:(id)sender;
 -(BOOL)personalNameValid:(NSString *)personalName;
 -(BOOL)passwordValid:(NSString *)password;
 -(BOOL)usernameValid:(NSString *)username;
 -(BOOL)emailValid:(NSString *)email;
+-(BOOL)usernameTaken:(NSString *)username;
+-(BOOL)emailTaken:(NSString *)email;
 
 @end

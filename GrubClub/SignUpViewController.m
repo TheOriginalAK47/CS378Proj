@@ -101,6 +101,26 @@
     }
 }
 
+-(BOOL) usernameTaken:(NSString *)username {
+    PFQuery *usernameQuery = [PFUser query];
+    [usernameQuery whereKey:@"username" equalTo:username]; // find all the women
+    NSArray *usernames = [usernameQuery findObjects];
+    if ([usernames count] > 0) {
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL) emailTaken:(NSString *)email {
+    PFQuery *emailQuery = [PFUser query];
+    [emailQuery whereKey:@"email" equalTo:email]; // find all the women
+    NSArray *emails = [emailQuery findObjects];
+    if ([emails count] > 0) {
+        return YES;
+    }
+    return NO;
+}
+
 - (IBAction)submitInformation:(id)sender {
     PFUser *user = [PFUser user];
     user.username = self.userName.text;
@@ -129,15 +149,19 @@
         return;
     }
     
-    /*
     if ([self usernameTaken:user.username]) {
-        
+        UIAlertView *usernameTaken = [[UIAlertView alloc]initWithTitle:@"Account Name Taken" message:@"It looks like another user has already taken that username. Please try using another." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [usernameTaken show];
+        NSLog(@"Username already in Parse DB");
+        return;
     }
     
     if ([self emailTaken:user.email]) {
-        
+        UIAlertView *emailTaken = [[UIAlertView alloc]initWithTitle:@"Account with email exists" message:@"There is already an account registered with that email. Please use another." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [emailTaken show];
+        NSLog(@"Email already in Parse DB");
+        return;
     }
-    */
     
     // other fields can be set just like with PFObject
     user[@"personalName"] = self.personalName.text;
