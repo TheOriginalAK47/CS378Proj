@@ -17,12 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_userEmail setDelegate:self];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    // Indicate we're done with the keyboard. Make it go away.
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*
@@ -36,7 +44,17 @@
 */
 
 - (IBAction)submitPwReset:(id)sender {
-    [PFUser requestPasswordResetForEmailInBackground: self.userEmail.text]; //password reset
+    [PFUser requestPasswordResetForEmailInBackground: self.userEmail.text
+                                               block:^(BOOL succeeded, NSError *error)
+     {
+         if (!succeeded)
+         {
+          UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Email" message:@"The email was not found." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+             [SignupFailed show];
+             return;
+         }
+         [self performSegueWithIdentifier:@"retrieveSuccess" sender:self];
+     }]; //password reset
     
     /*
      The flow for password reset is as follows:

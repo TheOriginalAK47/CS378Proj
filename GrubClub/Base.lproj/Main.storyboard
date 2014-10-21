@@ -411,7 +411,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitPwReset:" destination="T1z-g1-l0N" eventType="touchUpInside" id="YMQ-Bw-LJ9"/>
-                                    <segue destination="IO6-Ok-nGu" kind="push" id="OJT-ug-Tzt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -420,6 +419,7 @@
                     <navigationItem key="navigationItem" id="zE3-UI-gy9"/>
                     <connections>
                         <outlet property="userEmail" destination="mbN-Rw-53d" id="6jP-XX-dqb"/>
+                        <segue destination="IO6-Ok-nGu" kind="push" identifier="retrieveSuccess" id="8rf-5B-HOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lx8-yg-7qV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -470,6 +470,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ZKN-9k-ty5"/>
-        <segue reference="nUb-U7-DcC"/>
+        <segue reference="8rf-5B-HOA"/>
     </inferredMetricsTieBreakers>
 </document>

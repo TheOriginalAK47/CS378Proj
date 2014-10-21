@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface forgotPwViewController : UIViewController
+@interface forgotPwViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
 - (IBAction)submitPwReset:(id)sender;
 
