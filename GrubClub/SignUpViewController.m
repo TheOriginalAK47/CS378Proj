@@ -77,7 +77,7 @@
 
 -(BOOL) passwordValid:(NSString *)password {
     NSError *error = NULL;
-    NSRegularExpression *passwordRegex = [NSRegularExpression regularExpressionWithPattern:@"^[a-z0-9_-]{6,18}$" options:0 error:&error];
+    NSRegularExpression *passwordRegex = [NSRegularExpression regularExpressionWithPattern:@"^[A-Za-z0-9_-]{6,18}$" options:0 error:&error];
     NSUInteger numberOfMatches = [passwordRegex numberOfMatchesInString:password options:0
                                   range:NSMakeRange(0, [password length])]; // Check full string
     if (numberOfMatches < 1) {
@@ -109,17 +109,39 @@
     
     UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Account Info" message:@"The email, username, or password you entered is not allowed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     
-    if (![self usernameValid:user.username] || ![self passwordValid:user.password] || ![self emailValid:user.email] || ![self personalNameValid:_personalName.text])
-    {
+    bool valid = YES;
+    if (![self usernameValid:user.username]) {
+        NSLog(@"Bad username");
+        valid = NO;
+    } if (![self passwordValid:user.password]) {
+        NSLog(@"Bad password");
+        valid = NO;
+    } if (![self emailValid:user.email]) {
+        NSLog(@"Bad email");
+        valid = NO;
+    } if (![self personalNameValid:_personalName.text]) {
+        NSLog(@"Bad personal name");
+        valid = NO;
+    }
+    if (!valid) {
         [SignupFailed show];
         NSLog(@"Invalid username, password, email, or personal name."); // Can change to provide more info later but for now this should work.
         return;
+    }
+    
+    /*
+    if ([self usernameTaken:user.username]) {
         
     }
     
+    if ([self emailTaken:user.email]) {
+        
+    }
+    */
+    
     // other fields can be set just like with PFObject
     user[@"personalName"] = self.personalName.text;
-    
+
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
