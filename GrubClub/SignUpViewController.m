@@ -146,11 +146,16 @@
         if (!error) {
             // Hooray! Let them use the app now.
             NSLog(@"Submitted user sign up info to parse successfully");
+            
+            //so basically all you do is call this and the identifier is what you named the segue, dont do
+            //specific button to view controller
+            [self performSegueWithIdentifier:@"toSuccess" sender:self];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
             NSLog(errorString);
         }
     }];
+    
 }
 @end
