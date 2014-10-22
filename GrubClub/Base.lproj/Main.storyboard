@@ -84,11 +84,12 @@
                     <connections>
                         <outlet property="userName" destination="4f8-IR-p6N" id="UXP-q8-hWh"/>
                         <outlet property="userPassword" destination="EZ6-fx-Khp" id="2G6-lD-YBV"/>
+                        <segue destination="Tcb-Ks-igC" kind="modal" identifier="toMain" id="dXb-Kb-rgL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2185" y="-287"/>
+            <point key="canvasLocation" x="-2147" y="-299"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pVr-hr-FHA">
@@ -176,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckg-Wz-rQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1723" y="-108"/>
+            <point key="canvasLocation" x="-1713" y="-147"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ylq-Hv-nDg">
@@ -200,18 +201,22 @@
         <!--Table View Controller-->
         <scene sceneID="hai-Rq-b7I">
             <objects>
-                <tableViewController storyboardIdentifier="FriendListVC" id="Tcb-Ks-igC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FriendListVC" id="Tcb-Ks-igC" customClass="FLTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cvi-3s-lY0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="coH-5B-j1y">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Friends List" id="Ku7-2m-NqK">
                                     <barButtonItem key="leftBarButtonItem" title="Sign Out" id="MMa-Gj-DjI">
                                         <color key="tintColor" red="0.91089928669999998" green="0.17009295739999999" blue="0.14953543790000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="logOut:" destination="Tcb-Ks-igC" id="9PZ-Va-gn8"/>
+                                            <segue destination="vXZ-lx-hvc" kind="modal" id="FeJ-vK-gCp"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="Add Users" id="fbA-i8-WDJ">
                                         <color key="tintColor" red="0.24168408127055332" green="0.91089928668478259" blue="0.19806067789345361" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,7 +229,7 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aF6-Wi-ecH">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aF6-Wi-ecH" id="z4C-u3-rxD">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -261,7 +266,7 @@
                                 <navigationItem title="Friend Requests" id="rJy-yB-j86">
                                     <barButtonItem key="rightBarButtonItem" title="Search" id="QZe-ah-09A">
                                         <connections>
-                                            <segue destination="aJb-cv-mVQ" kind="push" id="b0X-v6-jBj"/>
+                                            <segue destination="aJb-cv-mVQ" kind="modal" id="b0X-v6-jBj"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -444,24 +449,6 @@
             </objects>
             <point key="canvasLocation" x="-2640" y="-287"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TFl-6Z-OBA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PaP-fe-YJk" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ek3-xV-Qg3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Tcb-Ks-igC" kind="relationship" relationship="rootViewController" id="VKk-jb-9El"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eZw-FW-kPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1713" y="773"/>
-        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -469,7 +456,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZKN-9k-ty5"/>
-        <segue reference="8rf-5B-HOA"/>
+        <segue reference="FeJ-vK-gCp"/>
+        <segue reference="nUb-U7-DcC"/>
     </inferredMetricsTieBreakers>
 </document>

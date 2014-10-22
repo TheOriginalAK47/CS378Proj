@@ -8,17 +8,19 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "FLTableViewController.h"
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
-
+@synthesize currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_userPassword setDelegate:self];
     [_userName setDelegate:self];
+    NSLog(@"LoginScreen currentUser: %@",self.currentUser.username);
     
 }
 
@@ -51,11 +53,11 @@
             // Do stuff after successful login.
             
             //set currentUser to pass later maybe
-            _currentUser = user;
+            self.currentUser = user;
 //            NSLog(@"Current user: %@" , _currentUser.username);
             
             
-            if (![[_currentUser objectForKey:@"emailVerified"] boolValue]) {
+            if (![[self.currentUser objectForKey:@"emailVerified"] boolValue]) {
                 // Refresh to make sure the user did not recently verify
 //                [_currentUser fetch]; /*this causes a warning
                 if (![[user objectForKey:@"emailVerified"] boolValue]) {
@@ -65,11 +67,8 @@
                     return;
                 }
             }
-            
-            UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *viewController = [main instantiateViewControllerWithIdentifier:@"FriendListVC"];
-            [self presentViewController:viewController animated:YES completion:nil];
             NSLog(@"User login successful");
+            [self performSegueWithIdentifier:@"toMain" sender:self];
         }
         else {
             // The login failed. Check error to see why.
@@ -79,7 +78,13 @@
             
             
         }}];
-    
+}
 
+//prepare current user for the next screen?
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toMain"]) {
+        FLTableViewController *vc = [segue destinationViewController];
+        vc.currentUser = self.currentUser;
+    }
 }
 @end

@@ -21,6 +21,7 @@
 		265C19C519F3244F009358C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A719F3244F009358C2 /* UIKit.framework */; };
 		265C19CD19F3244F009358C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265C19CB19F3244F009358C2 /* InfoPlist.strings */; };
 		265C19CF19F3244F009358C2 /* GrubClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19CE19F3244F009358C2 /* GrubClubTests.m */; };
+		2695552B19F729FC0064CC16 /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2695552A19F729FC0064CC16 /* FLTableViewController.m */; };
 		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
 		779152E619F3352200E3846C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E319F3352200E3846C /* Parse.framework */; };
 		779152E719F3352200E3846C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E419F3352200E3846C /* ParseFacebookUtils.framework */; };
@@ -68,6 +69,8 @@
 		265C19CA19F3244F009358C2 /* GrubClubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrubClubTests-Info.plist"; sourceTree = "<group>"; };
 		265C19CC19F3244F009358C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		265C19CE19F3244F009358C2 /* GrubClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrubClubTests.m; sourceTree = "<group>"; };
+		2695552919F729FC0064CC16 /* FLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
+		2695552A19F729FC0064CC16 /* FLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
 		779152E219F3352200E3846C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		779152E319F3352200E3846C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		779152E419F3352200E3846C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -174,12 +177,14 @@
 				265C19B519F3244F009358C2 /* Main.storyboard */,
 				265C19B819F3244F009358C2 /* ViewController.h */,
 				265C19B919F3244F009358C2 /* ViewController.m */,
-				779152FD19F33E9C00E3846C /* LoginViewController.h */,
-				779152FE19F33E9C00E3846C /* LoginViewController.m */,
 				779152FA19F338EA00E3846C /* SignUpViewController.h */,
 				779152FB19F338EA00E3846C /* SignUpViewController.m */,
 				7791530019F348FE00E3846C /* forgotPwViewController.h */,
 				7791530119F348FE00E3846C /* forgotPwViewController.m */,
+				779152FD19F33E9C00E3846C /* LoginViewController.h */,
+				779152FE19F33E9C00E3846C /* LoginViewController.m */,
+				2695552919F729FC0064CC16 /* FLTableViewController.h */,
+				2695552A19F729FC0064CC16 /* FLTableViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
 				265C19AA19F3244F009358C2 /* Supporting Files */,
 			);
@@ -314,6 +319,7 @@
 			files = (
 				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
 				265C19BA19F3244F009358C2 /* ViewController.m in Sources */,
+				2695552B19F729FC0064CC16 /* FLTableViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,
 				265C19B019F3244F009358C2 /* main.m in Sources */,
