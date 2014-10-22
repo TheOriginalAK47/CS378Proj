@@ -43,9 +43,31 @@
 }
 */
 
+-(BOOL) emailValid:(NSString *)email {
+    NSError *error = NULL;
+    NSRegularExpression *emailRegex = [NSRegularExpression regularExpressionWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:&error];
+    // Check error here... (maybe the regex pattern was malformed)
+    NSUInteger numberOfMatches = [emailRegex numberOfMatchesInString:email options:0
+                                                               range:NSMakeRange(0, [email length])]; // Check full string
+    if (numberOfMatches < 1) {
+        return NO;
+    }
+    else {
+        return YES;
+    }
+}
+
 - (IBAction)submitPwReset:(id)sender {
-    [PFUser requestPasswordResetForEmailInBackground: self.userEmail.text
-                                               block:^(BOOL succeeded, NSError *error)
+    
+    NSString *email = self.userEmail.text;
+    if (![self emailValid:email]) {
+        UIAlertView *invalidEmail = [[UIAlertView alloc]initWithTitle:@"Invalid Email" message:@"The email you provided isn't a proper email address." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [invalidEmail show];
+        NSLog(@"Provided incorrect email address.");
+        return;
+    }
+    
+    [PFUser requestPasswordResetForEmailInBackground: email block:^(BOOL succeeded, NSError *error)
      {
          if (!succeeded)
          {

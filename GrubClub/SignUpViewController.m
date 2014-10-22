@@ -177,7 +177,7 @@
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
-            NSLog(errorString);
+            NSLog(@"%@", errorString);
         }
     }];
     
