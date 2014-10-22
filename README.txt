@@ -2,22 +2,24 @@ README for GrubClub iOS application
 
 GrubClub aims to ensure that no one eats alone anymore by providing a video streaming and friend matching service.
 
-Features so far:
+Alpha Stage
 
-- Account sign-up
-	- Validates all fields when signing up to make sure they are textually valid
-	- Ensures that no other users have the same username or email within our database
-	- If the above conditions are true, sends a confirmation email to user which they need to act upon to sign-in
-	- Password fields are secure so as to ensure some sense of security
+Expected Use cases to be running 
+	1. Main Screen -> Login -> Friends list
+		- Returns message to user if invalid password and/or username 
+	2. Main Screen -> Create an account -> Submit -> Receive verification email -> Click verify link -> Main Screen -> Login  -> Friends list
+		- Error handling for improper user input
+			a) Email 
+			b) Username
+			c) Password 
+			d) Name 
+		- Notifies user if email and/or username is taken 
+	3. Forgot password? -> Retrieve Account Password -> Reset password -> Main Screen -> Login  -> Friends list
+		- Error handling for improper user email 
+		- Notifies user if email does not exist 
 
-- Account Login
-	- Performs a query on our DB to see if username/password combo exists. If so, allow login, else tell user the account info provided is incorrect.
 
-- Chat List
-	- Shows a list of other users the user is "friends" with and communicate with in the application
-
-- Add Friends Screen
-	- Have screens for requesting friends and sending requests to other users but no back-end servicing yet
-
-- Video Stream Screen
-	- Screen exists but is not implemented/functional yet
+Beta Roadmap 
+Our beta stage should include at least a basic implementation of video streaming/sharing between users on the app who have an ongoing session. We imagine this to be fairly 
+difficult and many issues relating to unavailability to large bandwidth, fluctuations in download/upload speeds, all in addition to maintaining an at least moderate video 
+quality stream. Again, testing this feature ourselves, finding run-time issues, and identifying small issues that can be solvable without spending too much time on them.
