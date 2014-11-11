@@ -18,7 +18,18 @@
     [Parse setApplicationId:@"gnWOiwYLGm0R7dHWsZs0sjlSGzfJbHtu3D09EEcY"
                   clientKey:@"iECq7AaAPPlrlagGLX4I22ayKql8UGA17qSlSC7h"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    
+    //QuickBlox
+    [QBApplication sharedApplication].applicationId = 16275;
+    [QBConnection registerServiceKey:@"rUb6csA7WV8Es-n"];
+    [QBConnection registerServiceSecret:@"BGRfheCbBCYXhET"];
+    [QBSettings setAccountKey:@"JNcTWMdirocKiaKaKbXq"];
+    
     return YES;
+    
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

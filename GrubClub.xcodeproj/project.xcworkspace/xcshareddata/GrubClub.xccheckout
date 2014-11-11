@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A71ED131AB8EE80E8834D2C3922899AB345082BD</key>
-		<string>https://github.com/TheOriginalAK47/CS378Proj</string>
+		<string>https://github.com/TheOriginalAK47/CS378Proj.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GrubClub.xcodeproj/project.xcworkspace</string>
+	<string>GrubClub.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A71ED131AB8EE80E8834D2C3922899AB345082BD</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/TheOriginalAK47/CS378Proj</string>
+	<string>https://github.com/TheOriginalAK47/CS378Proj.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

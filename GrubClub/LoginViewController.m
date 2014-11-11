@@ -9,19 +9,25 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "FLTableViewController.h"
+#import "AppDelegate.h"
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
 @synthesize currentUser;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_userPassword setDelegate:self];
     [_userName setDelegate:self];
-    NSLog(@"LoginScreen currentUser: %@",self.currentUser.username);
-    
+    NSLog(@"LoginScreen currentUser: %@",self.currentUser.login);
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -47,44 +53,54 @@
 */
 
 - (IBAction)loginButtonAction:(id)sender {
-
-    [PFUser logInWithUsernameInBackground:self.userName.text password:self.userPassword.text block:^(PFUser *user, NSError *error) {
-        if (user) {
-            // Do stuff after successful login.
-            
-            //set currentUser to pass later maybe
-            self.currentUser = user;
-//            NSLog(@"Current user: %@" , _currentUser.username);
-            
-            
-            if (![[self.currentUser objectForKey:@"emailVerified"] boolValue]) {
-                // Refresh to make sure the user did not recently verify
-//                [_currentUser fetch]; /*this causes a warning
-                if (![[user objectForKey:@"emailVerified"] boolValue]) {
-                    UIAlertView *emailUnverified = [[UIAlertView alloc]initWithTitle:@"Email Verification Failed" message:@"Please verify your email address." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                    [emailUnverified show];
-//                    [self redirectWithMessage:@"You must verify your email address for cake"];
-                    return;
-                }
-            }
-            NSLog(@"User login successful");
-            [self performSegueWithIdentifier:@"toMain" sender:self];
-        }
-        else {
-            // The login failed. Check error to see why.
-            NSLog(@"Login failed");
-            UIAlertView *LoginFailed = [[UIAlertView alloc]initWithTitle:@"Incorrect Login" message:@"The username or password you entered was incorrect. Please try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            [LoginFailed show];
-            
-            
-        }}];
+    NSString *userLogin = _userName.text;
+    NSString *userPassword = _userPassword.text;
+    
+    QBSessionParameters *parameters = [QBSessionParameters new];
+    parameters.userLogin = userLogin;
+    parameters.userPassword = userPassword;
+    
+    [QBRequest createSessionWithExtendedParameters:parameters successBlock:^(QBResponse *response, QBASession *session) {
+        NSLog(@"hereeeeeeeeeeee");
+        // Sign In to QuickBlox Chat
+        QBUUser *current = [QBUUser user];
+        current.login = userLogin;
+        current.ID = session.userID; // your current user's ID
+        NSLog(@"current ID: %lu",(unsigned long)session.userID);
+        current.password = userPassword; // your current user's password
+        
+        // set Chat delegate
+        [QBChat instance].delegate = self;
+        
+        // login to Chat
+        [[QBChat instance] loginWithUser:current];
+//        [self performSegueWithIdentifier:@"toMain" sender:self];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"Login failed");
+        NSString * error = [response.error description];
+        NSLog(@"error is this: %@",error);
+        UIAlertView *LoginFailed = [[UIAlertView alloc]initWithTitle:@"Incorrect Login" message:@"The username or password you entered was incorrect. Please try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [LoginFailed show];
+    }];
+    
+    
 }
 
+- (void)chatDidLogin{
+    NSLog(@"logged into chat successfully");
+    NSLog(@"person logged in: %lu", (unsigned long)[[QBChat instance] currentUser].ID);
+    NSLog(@"isloggedin: %d",[[QBChat instance] isLoggedIn]);
+    NSLog(@"login succeeded now creating records");
+    [self performSegueWithIdentifier:@"toMain" sender:self];
+}
 //prepare current user for the next screen?
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"toMain"]) {
-        FLTableViewController *vc = [segue destinationViewController];
-        vc.currentUser = self.currentUser;
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    [self.navigationController setNavigationBarHidden:NO];
+//    if ([segue.identifier isEqualToString:@"toMain"]) {
+//        FLTableViewController *vc = [segue destinationViewController];
+//        vc.currentUser = self.currentUser;
+//    }
+//}
 @end

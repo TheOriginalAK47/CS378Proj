@@ -7,7 +7,6 @@
 //
 
 #import "forgotPwViewController.h"
-#import "Parse/Parse.h"
 
 @interface forgotPwViewController ()
 
@@ -66,17 +65,15 @@
         NSLog(@"Provided incorrect email address.");
         return;
     }
-    
-    [PFUser requestPasswordResetForEmailInBackground: email block:^(BOOL succeeded, NSError *error)
-     {
-         if (!succeeded)
-         {
-          UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Email" message:@"The email was not found." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-             [SignupFailed show];
-             return;
-         }
-         [self performSegueWithIdentifier:@"retrieveSuccess" sender:self];
-     }]; //password reset
+    [QBRequest resetUserPasswordWithEmail:email successBlock:^(QBResponse *response) {
+        // Reset was successful
+        [self performSegueWithIdentifier:@"retrieveSuccess" sender:self];
+    } errorBlock:^(QBResponse *response) {
+        // Error
+        UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Email" message:@"The email was not found." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [SignupFailed show];
+        return;
+    }];
     
     /*
      The flow for password reset is as follows:
