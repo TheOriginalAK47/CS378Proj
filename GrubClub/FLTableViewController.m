@@ -16,6 +16,36 @@
 @end
 
 @implementation FLTableViewController
+@synthesize currentUser;
+@synthesize friendsID;
+@synthesize friendsUsernames;
+
+- (void) viewDidAppear:(BOOL)animated {
+    currentUser = [[QBChat instance] currentUser];
+    NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
+    [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"user_id"];
+    
+    //make request
+    [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        
+        // response processing;
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+            self.friendsID = [[list.fields objectForKey:@"friendsList"]mutableCopy];
+            self.friendsUsernames = [[list.fields objectForKey:@"usernames"] mutableCopy];
+            NSLog(@"list arrays updated with %lu objects", (unsigned long)friendsID.count);
+            [self.tableView reloadData];
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Could not access custom object. Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"No object found when searching for custom object. Response error: %@", [response.error description]);
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,26 +67,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.friendsID count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    // Configure the cell...
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
     
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.friendsUsernames[indexPath.row]];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

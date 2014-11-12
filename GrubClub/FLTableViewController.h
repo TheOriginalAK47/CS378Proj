@@ -11,5 +11,8 @@
 
 @interface FLTableViewController : UITableViewController
 - (IBAction)addUsers:(id)sender;
+@property NSMutableArray *friendsID;
+@property NSMutableArray *friendsUsernames;
+@property QBUUser *currentUser;
 
 @end
