@@ -7,6 +7,7 @@
 //
 
 #import "SplashViewController.h"
+#import <Quickblox/Quickblox.h>
 
 @interface SplashViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;

@@ -21,10 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString * name = [NSString stringWithFormat:@"Name: %@",user.fullName];
+    NSString *name = [NSString stringWithFormat:@"Name: %@",user.fullName];
     _label1.text = name;
     
-    NSString * login = [NSString stringWithFormat:@"username: %@",user.login];
+    NSString *login = [NSString stringWithFormat:@"username: %@",user.login];
     _label2.text = login;
     // Do any additional setup after loading the view.
 }

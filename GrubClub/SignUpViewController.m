@@ -7,7 +7,7 @@
 //
 
 #import "SignUpViewController.h"
-#import <Parse/Parse.h>
+#import <Quickblox/Quickblox.h>
 
 @interface SignUpViewController ()
 
@@ -101,23 +101,13 @@
     }
 }
 
+// No longer valid by now using Quickblox
 -(BOOL) usernameTaken:(NSString *)username {
-    PFQuery *usernameQuery = [PFUser query];
-    [usernameQuery whereKey:@"username" equalTo:username]; // find all the women
-    NSArray *usernames = [usernameQuery findObjects];
-    if ([usernames count] > 0) {
-        return YES;
-    }
     return NO;
 }
 
+// No longer valid by now using Quickblox
 -(BOOL) emailTaken:(NSString *)email {
-    PFQuery *emailQuery = [PFUser query];
-    [emailQuery whereKey:@"email" equalTo:email]; // find all the women
-    NSArray *emails = [emailQuery findObjects];
-    if ([emails count] > 0) {
-        return YES;
-    }
     return NO;
 }
 

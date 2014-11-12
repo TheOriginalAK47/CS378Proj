@@ -7,6 +7,7 @@
 //
 
 #import "forgotPwViewController.h"
+#import <Quickblox/Quickblox.h>
 
 @interface forgotPwViewController ()
 

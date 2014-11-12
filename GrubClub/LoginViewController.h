@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Parse/Parse.h"
+#import <Quickblox/Quickblox.h>
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate, QBChatDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;

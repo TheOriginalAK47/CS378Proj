@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Quickblox/Quickblox.h>
 
 @interface FriendRequestsViewController : UITableViewController <QBChatDelegate>
 @property QBUUser *searchedUser;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Quickblox/Quickblox.h>
 
 @interface FRViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *requests;
