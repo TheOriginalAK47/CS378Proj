@@ -24,8 +24,10 @@
     // Do any additional setup after loading the view.
     self.requests = [[NSMutableArray alloc] init];
     self.requestsUsernames = [[NSMutableArray alloc] init];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     currentUser = [[QBChat instance] currentUser];
-    
     
     NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
     [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"user_id"];
@@ -34,6 +36,8 @@
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
         // response processing;
+        NSLog(@"Objects: ");
+        NSLog(@"%@", objects);
         QBCOCustomObject *list = [objects objectAtIndex:0];
         [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
@@ -50,8 +54,7 @@
         // error handling
         NSLog(@"No object found when searching for custom object. Response error: %@", [response.error description]);
     }];
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
