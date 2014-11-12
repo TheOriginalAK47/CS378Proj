@@ -253,7 +253,7 @@
                                             <color key="tintColor" red="0.91089928669999998" green="0.17009295739999999" blue="0.14953543790000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="signoutPressed:" destination="H7f-R8-c0u" id="p7h-2R-v5W"/>
-                                                <segue destination="o84-ma-FKU" kind="push" id="4FJ-ke-vOW"/>
+                                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="backToLogin" id="Cto-ex-hP8"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Add Users" id="CRU-2h-v0A">
@@ -597,8 +597,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="eoc-WZ-nFp"/>
         <segue reference="iUz-Lk-7CG"/>
-        <segue reference="4FJ-ke-vOW"/>
+        <segue reference="Cto-ex-hP8"/>
         <segue reference="nUb-U7-DcC"/>
-        <segue reference="ZKN-9k-ty5"/>
     </inferredMetricsTieBreakers>
 </document>
