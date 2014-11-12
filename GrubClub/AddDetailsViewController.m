@@ -60,17 +60,15 @@
         [test2.fields setObject:status forKey:@"push[friendRequests][]"];
         [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
-            NSLog(@"SUCESS WUUUUUT");
+            //NSLog(@"SUCESS WUUUUUT");
         } errorBlock:^(QBResponse *response) {
             // error handling
-             NSLog(@"FAILED WUUUUUT");
             NSLog(@"Response error: %@", [response.error description]);
         }];
         
     } errorBlock:^(QBResponse *response) {
         // error handling
-         NSLog(@"add failed");
-        NSLog(@"Response error: %@", [response.error description]);
+        NSLog(@"Add failed, Response error: %@", [response.error description]);
     }];
 }
 

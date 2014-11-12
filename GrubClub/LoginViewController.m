@@ -60,7 +60,6 @@
     parameters.userPassword = userPassword;
     
     [QBRequest createSessionWithExtendedParameters:parameters successBlock:^(QBResponse *response, QBASession *session) {
-        NSLog(@"hereeeeeeeeeeee");
         // Sign In to QuickBlox Chat
         QBUUser *current = [QBUUser user];
         current.login = userLogin;
@@ -73,7 +72,6 @@
         
         // login to Chat
         [[QBChat instance] loginWithUser:current];
-//        [self performSegueWithIdentifier:@"toMain" sender:self];
         
     } errorBlock:^(QBResponse *response) {
         // error handling
@@ -88,7 +86,6 @@
 }
 
 - (void)chatDidLogin{
-    NSLog(@"logged into chat successfully");
     NSLog(@"person logged in: %lu", (unsigned long)[[QBChat instance] currentUser].ID);
     NSLog(@"isloggedin: %d",[[QBChat instance] isLoggedIn]);
     NSLog(@"login succeeded now creating records");

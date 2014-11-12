@@ -40,13 +40,11 @@
         QBCOCustomObject *test2 = [objects objectAtIndex:0];
         [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
-            NSLog(@"SUCESS WUUUUUT");
             _requests = [[test2.fields objectForKey:@"friendRequests"]mutableCopy];
             NSLog(@"request array has count of: %lu", (unsigned long)_requests.count);
             
         } errorBlock:^(QBResponse *response) {
             // error handling
-            NSLog(@"FAILED WUUUUUT");
             NSLog(@"Response error: %@", [response.error description]);
         }];
         
@@ -81,8 +79,6 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toAddDetails"]){
-        NSLog(@"search pressed");
-//        [[QBChat instance] addUserToContactListRequest:1892667];
         NSLog(@"QBChat add called");
         AddDetailsViewController *vc = [segue destinationViewController];
         vc.user = searchedUser;

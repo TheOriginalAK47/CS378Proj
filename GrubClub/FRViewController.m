@@ -35,14 +35,12 @@
         QBCOCustomObject *test2 = [objects objectAtIndex:0];
         [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
-            NSLog(@"SUCESS WUUUUUT");
             _requests = [[test2.fields objectForKey:@"friendRequests"]mutableCopy];
             NSLog(@"request array has count of: %lu", (unsigned long)_requests.count);
             NSLog(@"object at index 0: %@" , [_requests objectAtIndex:0]);
             [self.tableView reloadData];
         } errorBlock:^(QBResponse *response) {
             // error handling
-            NSLog(@"FAILED WUUUUUT");
             NSLog(@"Response error: %@", [response.error description]);
         }];
         
@@ -93,13 +91,11 @@
         NSLog(@"Entered: %@",text);
         [QBRequest userWithLogin:text
                     successBlock:^(QBResponse *response, QBUUser *user){
-                        NSLog(@"found him!!!");
                         NSLog(@"QBUUser login: %@",user.login );
                         searchedUser = user;
                         [self performSegueWithIdentifier:@"toAddDetails" sender:self];
                         
                     }errorBlock:^(QBResponse *response){
-                        NSLog(@"Search failed");
                         NSString * error = [response.error description];
                         NSLog(@"error is this: %@",error);
                         UIAlertView *SearchFailed = [[UIAlertView alloc]initWithTitle:@"Search Failed" message:@"Could not find user." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
@@ -110,8 +106,6 @@
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toAddDetails"]){
-        NSLog(@"search pressed");
-        //        [[QBChat instance] addUserToContactListRequest:1892667];
         NSLog(@"QBChat add called");
         AddDetailsViewController *vc = [segue destinationViewController];
         vc.user = searchedUser;

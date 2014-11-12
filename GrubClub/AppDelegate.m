@@ -16,10 +16,10 @@
     // Override point for customization after application launch.
     
     //QuickBlox
-    [QBApplication sharedApplication].applicationId = 16275;
-    [QBConnection registerServiceKey:@"rUb6csA7WV8Es-n"];
-    [QBConnection registerServiceSecret:@"BGRfheCbBCYXhET"];
-    [QBSettings setAccountKey:@"JNcTWMdirocKiaKaKbXq"];
+    [QBApplication sharedApplication].applicationId = APP_ID;
+    [QBConnection registerServiceKey:SERVICE_KEY];
+    [QBConnection registerServiceSecret:SECRET_SERVICE_KEY];
+    [QBSettings setAccountKey:ACCOUNT_KEY];
     
     return YES;
     
