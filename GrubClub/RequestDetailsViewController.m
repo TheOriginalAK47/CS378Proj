@@ -14,12 +14,15 @@
 
 @implementation RequestDetailsViewController
 @synthesize userID;
-@synthesize selectedIndex;
 @synthesize otherID;
 @synthesize otherUsername;
+@synthesize requests;
+@synthesize requestsUsernames;
+@synthesize index;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"requests array count in RequestDetail is: %d", requests.count);
     // Do any additional setup after loading the view.
     
     [QBRequest userWithID:userID successBlock:^(QBResponse *response, QBUUser *user) {
@@ -56,49 +59,122 @@
     [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"user_id"];
     
     
-    //get friendslist
+    //get current user friend's list
+    [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        // response processing
+        
+        //get the list itself
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        
+        //add accepted person to friend current user friend list
+        [list.fields setObject:otherID forKey:@"add_to_set[friendsList][]"];
+        [list.fields setObject:otherUsername forKey:@"add_to_set[usernames][]"];
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+            NSLog(@"current user accepted friend request");
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"Response error: %@", [response.error description]);
+    }];
     
-//    [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
-//        // response processing
-//        
-//        //get the list itself
-//        QBCOCustomObject *test2 = [objects objectAtIndex:0];
-//        NSNumber *status = [NSNumber numberWithInteger:currentUser.ID];
-//        [test2.fields setObject:status forKey:@"add_to_set[friendsList][]"];
-//        [test2.fields setObject:currentUser.login forKey:@"add_to_set[usernames][]"];
-//    } errorBlock:^(QBResponse *response) {
-//        // error handling
-//        NSLog(@"Response error: %@", [response.error description]);
-//    }];
     
-////    remove from requests
-//    [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
-//        // response processing
-//        
-//        //get the list itself
-//        QBCOCustomObject *test2 = [objects objectAtIndex:0];
-//        NSNumber *status = [NSNumber numberWithInteger:currentUser.ID];
-//        NSLog(@"Otherusername is: %@",otherUsername);
-//        [test2.fields setObject:otherID forKey:@"pull[friendRequests][]"];
-//        [test2.fields setObject:otherUsername forKey:@"pul[usernames][]"];
-//        [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
-//            // object updated
-//            NSLog(@"SUCESS WUUUUUT");
-//        } errorBlock:^(QBResponse *response) {
-//            // error handling
-//            NSLog(@"Response error: %@", [response.error description]);
-//        }];
-//
-//    } errorBlock:^(QBResponse *response) {
-//        // error handling
-//        NSLog(@"Response error: %@", [response.error description]);
-//    }];
-//    
-//    
+    //get current user's friend requests list
+    [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        
+        
+        // response processing
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        
+        //remove from list
+        [requests removeObjectAtIndex:index];
+        [requestsUsernames removeObjectAtIndex:index];
+        
+        //update friendRequests list
+        [list.fields setObject:requests forKey:@"friendRequests"];
+        [list.fields setObject:requestsUsernames forKey:@"usernames"];
+        
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"Add failed, Response error: %@", [response.error description]);
+    }];
+    
+    
+    //now finally get other users friends list
+    [getRequest setObject:otherID forKey:@"user_id"];
+    [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        // response processing
+        
+        //get the list itself
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        
+        //add accepted person to friend current user friend list
+        [list.fields setObject:[NSNumber numberWithLong:currentUser.ID] forKey:@"add_to_set[friendsList][]"];
+        [list.fields setObject:currentUser.login forKey:@"add_to_set[usernames][]"];
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+            NSLog(@"current user accepted friend request");
+             [self performSegueWithIdentifier:@"declined" sender:self];
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"Response error: %@", [response.error description]);
+    }];
+    
+    
+
     
     
 }
 
 - (IBAction)declinePressed:(id)sender {
+    QBUUser *currentUser = [[QBChat instance] currentUser];
+    NSLog(@"removed user at row: %d", (int)index);
+    [requests removeObjectAtIndex:index];
+    [requestsUsernames removeObjectAtIndex:index];
+    
+    
+    NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
+    [getRequest setObject:[NSNumber numberWithLong:currentUser.ID] forKey:@"user_id"];
+    
+    
+    //make request
+    [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        
+        
+        // response processing
+        NSLog(@"add worked. objects in objects array: %lu", (unsigned long)objects.count);
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        
+        [list.fields setObject:requests forKey:@"friendRequests"];
+        [list.fields setObject:requestsUsernames forKey:@"usernames"];
+        
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+            [self performSegueWithIdentifier:@"declined" sender:self];
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"Add failed, Response error: %@", [response.error description]);
+    }];
 }
 @end

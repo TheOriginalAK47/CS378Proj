@@ -21,6 +21,7 @@
 		265C19CD19F3244F009358C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265C19CB19F3244F009358C2 /* InfoPlist.strings */; };
 		265C19CF19F3244F009358C2 /* GrubClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19CE19F3244F009358C2 /* GrubClubTests.m */; };
 		267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */; };
+		267F6A0E1A13F98D0059FDCD /* FLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267F6A0D1A13F98D0059FDCD /* FLViewController.m */; };
 		26B036C61A111987002D9038 /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C51A111987002D9038 /* FLTableViewController.m */; };
 		26B036C91A112A56002D9038 /* FRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C81A112A56002D9038 /* FRViewController.m */; };
 		26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D431A106A410041E7C2 /* AddDetailsViewController.m */; };
@@ -81,6 +82,8 @@
 		265C19CE19F3244F009358C2 /* GrubClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrubClubTests.m; sourceTree = "<group>"; };
 		267F6A091A1377EB0059FDCD /* RequestDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDetailsViewController.h; sourceTree = "<group>"; };
 		267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDetailsViewController.m; sourceTree = "<group>"; };
+		267F6A0C1A13F98D0059FDCD /* FLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLViewController.h; sourceTree = "<group>"; };
+		267F6A0D1A13F98D0059FDCD /* FLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewController.m; sourceTree = "<group>"; };
 		26B036C41A111987002D9038 /* FLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
 		26B036C51A111987002D9038 /* FLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
 		26B036C71A112A56002D9038 /* FRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRViewController.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */,
 				26B036C71A112A56002D9038 /* FRViewController.h */,
 				26B036C81A112A56002D9038 /* FRViewController.m */,
+				267F6A0C1A13F98D0059FDCD /* FLViewController.h */,
+				267F6A0D1A13F98D0059FDCD /* FLViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
 				265C19AA19F3244F009358C2 /* Supporting Files */,
 			);
@@ -372,6 +377,7 @@
 				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
 				26C857571A0FE6740074B41C /* SplashViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,
+				267F6A0E1A13F98D0059FDCD /* FLViewController.m in Sources */,
 				26B036C91A112A56002D9038 /* FRViewController.m in Sources */,
 				26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,

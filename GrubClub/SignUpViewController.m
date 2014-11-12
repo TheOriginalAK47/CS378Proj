@@ -187,7 +187,9 @@
         permissions.updateAccess = QBCOPermissionsAccessOpen;
         permissions.readAccess = QBCOPermissionsAccessOpen;
         permissions.deleteAccess = QBCOPermissionsAccessOpen;
+        
         object2.permissions = permissions;
+        object.permissions = permissions;
         
         
         [QBRequest createObject:object successBlock:^(QBResponse *response, QBCOCustomObject *object) {

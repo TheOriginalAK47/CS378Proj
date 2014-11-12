@@ -13,8 +13,13 @@
 @property int userID;
 @property NSString* otherUsername;
 @property NSNumber* otherID;
+@property NSInteger index;
 
-@property NSNumber *selectedIndex;
+
+
+@property NSMutableArray *requests;
+@property NSMutableArray *requestsUsernames;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 - (IBAction)acceptPressed:(id)sender;

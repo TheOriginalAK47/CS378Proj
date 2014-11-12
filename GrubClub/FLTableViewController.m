@@ -9,6 +9,9 @@
 #import "FLTableViewController.h"
 
 @interface FLTableViewController ()
+- (IBAction)addPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *signOutPressed;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -99,5 +104,7 @@
 
 - (IBAction)addUsers:(id)sender {
     [self performSegueWithIdentifier:@"toFR" sender:self];
+}
+- (IBAction)addPressed:(id)sender {
 }
 @end

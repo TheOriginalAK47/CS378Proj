@@ -79,7 +79,7 @@
 
 - (IBAction)searchPressed:(id)sender {
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Please enter the username of the user you wish to add." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Cancel", nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Search for User" message:@"Please enter the username of the user you wish to add." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Cancel", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
     
@@ -119,9 +119,12 @@
         RequestDetailsViewController *vc = segue.destinationViewController;
         vc.userID = target;
         NSInteger index = [[self.tableView indexPathForSelectedRow] row];
+        vc.index = index;
         
         vc.otherUsername = [self.requestsUsernames objectAtIndex:index];
         vc.otherID = [self.requests objectAtIndex:index];
+        vc.requests = self.requests;
+        vc.requestsUsernames = self.requestsUsernames;
     }
     
 }

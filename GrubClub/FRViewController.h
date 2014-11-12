@@ -12,6 +12,7 @@
 @interface FRViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *requests;
 @property NSMutableArray *requestsUsernames;
+
 - (IBAction)cancelPressed:(id)sender;
 @property QBUUser *searchedUser;
 @property QBUUser *currentUser;

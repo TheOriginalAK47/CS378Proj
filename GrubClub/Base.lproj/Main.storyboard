@@ -119,7 +119,7 @@
                     <connections>
                         <outlet property="userName" destination="4f8-IR-p6N" id="UXP-q8-hWh"/>
                         <outlet property="userPassword" destination="EZ6-fx-Khp" id="2G6-lD-YBV"/>
-                        <segue destination="Tcb-Ks-igC" kind="modal" identifier="toMain" id="dXb-Kb-rgL"/>
+                        <segue destination="H7f-R8-c0u" kind="modal" identifier="toMain" id="cg2-pU-xq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -231,7 +231,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTG-NS-A7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="153"/>
+            <point key="canvasLocation" x="-398" y="86"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0w6-zR-fbu">
+            <objects>
+                <viewController id="H7f-R8-c0u" customClass="FLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R9z-9S-gPx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qk0-1a-pxm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2HX-8d-gw4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9m-Gh-7CH">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Friends List" id="ss8-Ne-h7h">
+                                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="zJR-ik-93x">
+                                            <color key="tintColor" red="0.91089928669999998" green="0.17009295739999999" blue="0.14953543790000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="signoutPressed:" destination="H7f-R8-c0u" id="p7h-2R-v5W"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Users" id="CRU-2h-v0A">
+                                            <color key="tintColor" red="0.24168408129999999" green="0.91089928669999998" blue="0.19806067790000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="addPressed:" destination="H7f-R8-c0u" id="LTN-PJ-T0m"/>
+                                                <segue destination="gno-C6-ttA" kind="modal" identifier="toFR" id="eoc-WZ-nFp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oHa-rN-SDZ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YJt-12-N7a">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJt-12-N7a" id="8FI-d5-vjd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="c8G-zx-pDe" kind="modal" id="J1P-Tu-4bd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="H7f-R8-c0u" id="76D-FI-Yji"/>
+                                    <outlet property="delegate" destination="H7f-R8-c0u" id="q4w-g3-Kmc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="oHa-rN-SDZ" id="mRa-5M-AqF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3G1-Ir-0ZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-788" y="428"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hai-Rq-b7I">
@@ -248,31 +311,24 @@
                                 <navigationItem title="Friends List" id="Ku7-2m-NqK">
                                     <barButtonItem key="leftBarButtonItem" title="Sign Out" id="MMa-Gj-DjI">
                                         <color key="tintColor" red="0.91089928669999998" green="0.17009295739999999" blue="0.14953543790000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="vXZ-lx-hvc" kind="modal" identifier="toLoginScreen" id="FeJ-vK-gCp"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="Add Users" id="fbA-i8-WDJ">
                                         <color key="tintColor" red="0.24168408127055332" green="0.91089928668478259" blue="0.19806067789345361" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="addUsers:" destination="Tcb-Ks-igC" id="bUf-wV-VE7"/>
-                                            <segue destination="gno-C6-ttA" kind="modal" identifier="toFR" id="749-7E-3TY"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aF6-Wi-ecH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="aF6-Wi-ecH">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aF6-Wi-ecH" id="z4C-u3-rxD">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="c8G-zx-pDe" kind="push" id="MIB-8a-T60"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -284,7 +340,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSQ-jA-465" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1191" y="777"/>
+            <point key="canvasLocation" x="-1277" y="754"/>
         </scene>
         <!--Request Details View Controller-->
         <scene sceneID="775-zk-ZLh">
@@ -340,11 +396,12 @@
                     <connections>
                         <outlet property="nameLabel" destination="bMI-J0-Icv" id="mzH-zV-41U"/>
                         <outlet property="usernameLabel" destination="0Oo-jA-IH5" id="JMT-z9-Uyg"/>
+                        <segue destination="gno-C6-ttA" kind="modal" identifier="declined" id="tnN-gC-4n8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B41-4H-d4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1279" y="1402"/>
+            <point key="canvasLocation" x="-1439" y="1629"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3pL-1Q-dWl">
@@ -401,12 +458,12 @@
                     <connections>
                         <outlet property="tableView" destination="g9o-Ij-h6q" id="Eom-5a-Kf9"/>
                         <segue destination="1KU-o7-Pob" kind="modal" identifier="toAddDetails" id="JuV-O2-GtR"/>
-                        <segue destination="Tcb-Ks-igC" kind="modal" identifier="toFriendsList" id="ruw-21-xNg"/>
+                        <segue destination="H7f-R8-c0u" kind="modal" identifier="toFriendsList" id="iUz-Lk-7CG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDI-sy-LeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-893" y="1429"/>
+            <point key="canvasLocation" x="-913" y="1483"/>
         </scene>
         <!--Add Details View Controller-->
         <scene sceneID="53i-nY-tG7">
@@ -583,9 +640,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ruw-21-xNg"/>
-        <segue reference="ecH-Uo-J90"/>
-        <segue reference="Dgs-Q2-YuK"/>
+        <segue reference="iUz-Lk-7CG"/>
+        <segue reference="eoc-WZ-nFp"/>
         <segue reference="nUb-U7-DcC"/>
+        <segue reference="ZKN-9k-ty5"/>
     </inferredMetricsTieBreakers>
 </document>
