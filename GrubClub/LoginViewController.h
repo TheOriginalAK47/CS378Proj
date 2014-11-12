@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Parse/Parse.h"
+#import <Quickblox/Quickblox.h>
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate, QBChatDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
 - (IBAction)loginButtonAction:(id)sender;
-@property PFUser *currentUser; //would be used as a way to track session
+@property QBUUser *currentUser; //would be used as a way to track session
 
 @end

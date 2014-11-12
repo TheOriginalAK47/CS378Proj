@@ -7,18 +7,23 @@
 //
 
 #import "AppDelegate.h"
-#import <Parse/Parse.h> /*Ali */
+#import <Quickblox/Quickblox.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    /* Ali */
-    [Parse setApplicationId:@"gnWOiwYLGm0R7dHWsZs0sjlSGzfJbHtu3D09EEcY"
-                  clientKey:@"iECq7AaAPPlrlagGLX4I22ayKql8UGA17qSlSC7h"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    //QuickBlox
+    [QBApplication sharedApplication].applicationId = APP_ID;
+    [QBConnection registerServiceKey:SERVICE_KEY];
+    [QBConnection registerServiceSecret:SECRET_SERVICE_KEY];
+    [QBSettings setAccountKey:ACCOUNT_KEY];
+    
     return YES;
+    
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -2,32 +2,55 @@
 //  FLTableViewController.m
 //  GrubClub
 //
-//  Created by Surakij Areenukul on 10/21/14.
+//  Created by Surakij Areenukul on 11/10/14.
 //  Copyright (c) 2014 HelloWorld. All rights reserved.
 //
 
 #import "FLTableViewController.h"
-#import "LoginViewController.h"
-#import "Parse/Parse.h"
+
 @interface FLTableViewController ()
+- (IBAction)addPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *signOutPressed;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation FLTableViewController
 @synthesize currentUser;
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@synthesize friendsID;
+@synthesize friendsUsernames;
+
+- (void) viewDidAppear:(BOOL)animated {
+    currentUser = [[QBChat instance] currentUser];
+    NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
+    [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"user_id"];
+    
+    //make request
+    [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
+        
+        // response processing;
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+            // object updated
+            self.friendsID = [[list.fields objectForKey:@"friendsList"]mutableCopy];
+            self.friendsUsernames = [[list.fields objectForKey:@"usernames"] mutableCopy];
+            NSLog(@"list arrays updated with %lu objects", (unsigned long)friendsID.count);
+            [self.tableView reloadData];
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Could not access custom object. Response error: %@", [response.error description]);
+        }];
+        
+    } errorBlock:^(QBResponse *response) {
+        // error handling
+        NSLog(@"No object found when searching for custom object. Response error: %@", [response.error description]);
+    }];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"FLTableViewController current user: %@",self.currentUser.username);
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,43 +59,38 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return [self.friendsID count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    // Configure the cell...
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
     
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.friendsUsernames[indexPath.row]];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
@@ -80,8 +98,7 @@
 
 /*
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -93,15 +110,13 @@
 
 /*
 // Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
 */
 
 /*
 // Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
@@ -111,31 +126,15 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 */
 
-- (IBAction)logOut:(id)sender {
-    NSLog(@"logging out");
-    [self performSegueWithIdentifier:@"toLoginScreen" sender:self];
+- (IBAction)addUsers:(id)sender {
+    [self performSegueWithIdentifier:@"toFR" sender:self];
 }
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"here");
-    if ([segue.identifier isEqualToString:@"toLoginScreen"]){
-        NSLog(@"here2");
-        [PFUser logOut];
-        NSLog(@"here3");
-        PFUser *new = [PFUser currentUser]; // this will now be nil
-        NSLog(@"here4");
-        LoginViewController *vc = [segue destinationViewController];
-        NSLog(@"here5");
-        vc.currentUser = new;
-        NSLog(@"Here6");
-    }
+- (IBAction)addPressed:(id)sender {
 }
-
 @end

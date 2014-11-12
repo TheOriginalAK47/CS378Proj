@@ -14,17 +14,30 @@
 		265C19B019F3244F009358C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19AF19F3244F009358C2 /* main.m */; };
 		265C19B419F3244F009358C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19B319F3244F009358C2 /* AppDelegate.m */; };
 		265C19B719F3244F009358C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C19B519F3244F009358C2 /* Main.storyboard */; };
-		265C19BA19F3244F009358C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19B919F3244F009358C2 /* ViewController.m */; };
 		265C19BC19F3244F009358C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265C19BB19F3244F009358C2 /* Images.xcassets */; };
 		265C19C319F3244F009358C2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19C219F3244F009358C2 /* XCTest.framework */; };
 		265C19C419F3244F009358C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A319F3244F009358C2 /* Foundation.framework */; };
 		265C19C519F3244F009358C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A719F3244F009358C2 /* UIKit.framework */; };
 		265C19CD19F3244F009358C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265C19CB19F3244F009358C2 /* InfoPlist.strings */; };
 		265C19CF19F3244F009358C2 /* GrubClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19CE19F3244F009358C2 /* GrubClubTests.m */; };
-		2695552B19F729FC0064CC16 /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2695552A19F729FC0064CC16 /* FLTableViewController.m */; };
+		267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */; };
+		267F6A0E1A13F98D0059FDCD /* FLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267F6A0D1A13F98D0059FDCD /* FLViewController.m */; };
+		26B036C61A111987002D9038 /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C51A111987002D9038 /* FLTableViewController.m */; };
+		26B036C91A112A56002D9038 /* FRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C81A112A56002D9038 /* FRViewController.m */; };
+		26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D431A106A410041E7C2 /* AddDetailsViewController.m */; };
+		26B69D461A10D2CC0041E7C2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B69D451A10D2CC0041E7C2 /* libc++.dylib */; };
+		26B69D481A10D2F90041E7C2 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B69D471A10D2F90041E7C2 /* libstdc++.dylib */; };
+		26C857481A0FE51D0074B41C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857471A0FE51D0074B41C /* CoreData.framework */; };
+		26C8574A1A0FE5340074B41C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857491A0FE5340074B41C /* CoreMedia.framework */; };
+		26C8574C1A0FE53E0074B41C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C8574B1A0FE53E0074B41C /* Accelerate.framework */; };
+		26C8574E1A0FE5460074B41C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C8574D1A0FE5460074B41C /* CoreVideo.framework */; };
+		26C857501A0FE5500074B41C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C8574F1A0FE5500074B41C /* AVFoundation.framework */; };
+		26C857521A0FE5730074B41C /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857511A0FE5730074B41C /* libresolv.dylib */; };
+		26C857541A0FE57C0074B41C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857531A0FE57C0074B41C /* libxml2.dylib */; };
+		26C857571A0FE6740074B41C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C857561A0FE6740074B41C /* SplashViewController.m */; };
+		49B0ECEA1A11BD940046C4FD /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */; };
 		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
 		779152E619F3352200E3846C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E319F3352200E3846C /* Parse.framework */; };
-		779152E719F3352200E3846C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E419F3352200E3846C /* ParseFacebookUtils.framework */; };
 		779152E919F3363800E3846C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E819F3363800E3846C /* AudioToolbox.framework */; };
 		779152EB19F3364200E3846C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152EA19F3364200E3846C /* CFNetwork.framework */; };
 		779152ED19F3365800E3846C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152EC19F3365800E3846C /* CoreLocation.framework */; };
@@ -61,19 +74,36 @@
 		265C19B219F3244F009358C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		265C19B319F3244F009358C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		265C19B619F3244F009358C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		265C19B819F3244F009358C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		265C19B919F3244F009358C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		265C19BB19F3244F009358C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		265C19C119F3244F009358C2 /* GrubClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrubClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		265C19C219F3244F009358C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		265C19CA19F3244F009358C2 /* GrubClubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrubClubTests-Info.plist"; sourceTree = "<group>"; };
 		265C19CC19F3244F009358C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		265C19CE19F3244F009358C2 /* GrubClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrubClubTests.m; sourceTree = "<group>"; };
-		2695552919F729FC0064CC16 /* FLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
-		2695552A19F729FC0064CC16 /* FLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
+		267F6A091A1377EB0059FDCD /* RequestDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDetailsViewController.h; sourceTree = "<group>"; };
+		267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDetailsViewController.m; sourceTree = "<group>"; };
+		267F6A0C1A13F98D0059FDCD /* FLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLViewController.h; sourceTree = "<group>"; };
+		267F6A0D1A13F98D0059FDCD /* FLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewController.m; sourceTree = "<group>"; };
+		26B036C41A111987002D9038 /* FLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
+		26B036C51A111987002D9038 /* FLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
+		26B036C71A112A56002D9038 /* FRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRViewController.h; sourceTree = "<group>"; };
+		26B036C81A112A56002D9038 /* FRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRViewController.m; sourceTree = "<group>"; };
+		26B69D421A106A410041E7C2 /* AddDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDetailsViewController.h; sourceTree = "<group>"; };
+		26B69D431A106A410041E7C2 /* AddDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDetailsViewController.m; sourceTree = "<group>"; };
+		26B69D451A10D2CC0041E7C2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		26B69D471A10D2F90041E7C2 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		26C857471A0FE51D0074B41C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		26C857491A0FE5340074B41C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		26C8574B1A0FE53E0074B41C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		26C8574D1A0FE5460074B41C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		26C8574F1A0FE5500074B41C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		26C857511A0FE5730074B41C /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		26C857531A0FE57C0074B41C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		26C857551A0FE6740074B41C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		26C857561A0FE6740074B41C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		779152E219F3352200E3846C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		779152E319F3352200E3846C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		779152E419F3352200E3846C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		779152E819F3363800E3846C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		779152EA19F3364200E3846C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		779152EC19F3365800E3846C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -96,18 +126,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				779152F919F336A500E3846C /* SystemConfiguration.framework in Frameworks */,
-				779152F719F3369B00E3846C /* StoreKit.framework in Frameworks */,
-				779152F519F3369100E3846C /* Security.framework in Frameworks */,
-				779152F319F3368600E3846C /* QuartzCore.framework in Frameworks */,
+				49B0ECEA1A11BD940046C4FD /* Quickblox.framework in Frameworks */,
+				26B69D481A10D2F90041E7C2 /* libstdc++.dylib in Frameworks */,
+				26B69D461A10D2CC0041E7C2 /* libc++.dylib in Frameworks */,
+				26C857541A0FE57C0074B41C /* libxml2.dylib in Frameworks */,
+				26C857521A0FE5730074B41C /* libresolv.dylib in Frameworks */,
 				779152F119F3367600E3846C /* libz.dylib in Frameworks */,
-				779152EF19F3366D00E3846C /* MobileCoreServices.framework in Frameworks */,
-				779152ED19F3365800E3846C /* CoreLocation.framework in Frameworks */,
-				779152EB19F3364200E3846C /* CFNetwork.framework in Frameworks */,
+				779152F519F3369100E3846C /* Security.framework in Frameworks */,
+				26C857501A0FE5500074B41C /* AVFoundation.framework in Frameworks */,
+				26C8574E1A0FE5460074B41C /* CoreVideo.framework in Frameworks */,
+				26C8574C1A0FE53E0074B41C /* Accelerate.framework in Frameworks */,
+				26C8574A1A0FE5340074B41C /* CoreMedia.framework in Frameworks */,
 				779152E919F3363800E3846C /* AudioToolbox.framework in Frameworks */,
+				26C857481A0FE51D0074B41C /* CoreData.framework in Frameworks */,
 				265C19A619F3244F009358C2 /* CoreGraphics.framework in Frameworks */,
+				779152EF19F3366D00E3846C /* MobileCoreServices.framework in Frameworks */,
+				779152F919F336A500E3846C /* SystemConfiguration.framework in Frameworks */,
+				779152EB19F3364200E3846C /* CFNetwork.framework in Frameworks */,
+				779152F719F3369B00E3846C /* StoreKit.framework in Frameworks */,
+				779152F319F3368600E3846C /* QuartzCore.framework in Frameworks */,
+				779152ED19F3365800E3846C /* CoreLocation.framework in Frameworks */,
 				265C19A819F3244F009358C2 /* UIKit.framework in Frameworks */,
-				779152E719F3352200E3846C /* ParseFacebookUtils.framework in Frameworks */,
 				265C19A419F3244F009358C2 /* Foundation.framework in Frameworks */,
 				779152E519F3352200E3846C /* Bolts.framework in Frameworks */,
 				779152E619F3352200E3846C /* Parse.framework in Frameworks */,
@@ -149,6 +188,16 @@
 		265C19A219F3244F009358C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */,
+				26B69D471A10D2F90041E7C2 /* libstdc++.dylib */,
+				26B69D451A10D2CC0041E7C2 /* libc++.dylib */,
+				26C857531A0FE57C0074B41C /* libxml2.dylib */,
+				26C857511A0FE5730074B41C /* libresolv.dylib */,
+				26C8574F1A0FE5500074B41C /* AVFoundation.framework */,
+				26C8574D1A0FE5460074B41C /* CoreVideo.framework */,
+				26C8574B1A0FE53E0074B41C /* Accelerate.framework */,
+				26C857491A0FE5340074B41C /* CoreMedia.framework */,
+				26C857471A0FE51D0074B41C /* CoreData.framework */,
 				779152F819F336A500E3846C /* SystemConfiguration.framework */,
 				779152F619F3369B00E3846C /* StoreKit.framework */,
 				779152F419F3369100E3846C /* Security.framework */,
@@ -160,7 +209,6 @@
 				779152E819F3363800E3846C /* AudioToolbox.framework */,
 				779152E219F3352200E3846C /* Bolts.framework */,
 				779152E319F3352200E3846C /* Parse.framework */,
-				779152E419F3352200E3846C /* ParseFacebookUtils.framework */,
 				265C19A319F3244F009358C2 /* Foundation.framework */,
 				265C19A519F3244F009358C2 /* CoreGraphics.framework */,
 				265C19A719F3244F009358C2 /* UIKit.framework */,
@@ -174,17 +222,25 @@
 			children = (
 				265C19B219F3244F009358C2 /* AppDelegate.h */,
 				265C19B319F3244F009358C2 /* AppDelegate.m */,
+				26C857551A0FE6740074B41C /* SplashViewController.h */,
+				26C857561A0FE6740074B41C /* SplashViewController.m */,
 				265C19B519F3244F009358C2 /* Main.storyboard */,
-				265C19B819F3244F009358C2 /* ViewController.h */,
-				265C19B919F3244F009358C2 /* ViewController.m */,
 				779152FA19F338EA00E3846C /* SignUpViewController.h */,
 				779152FB19F338EA00E3846C /* SignUpViewController.m */,
+				26B036C41A111987002D9038 /* FLTableViewController.h */,
+				26B036C51A111987002D9038 /* FLTableViewController.m */,
 				7791530019F348FE00E3846C /* forgotPwViewController.h */,
 				7791530119F348FE00E3846C /* forgotPwViewController.m */,
 				779152FD19F33E9C00E3846C /* LoginViewController.h */,
 				779152FE19F33E9C00E3846C /* LoginViewController.m */,
-				2695552919F729FC0064CC16 /* FLTableViewController.h */,
-				2695552A19F729FC0064CC16 /* FLTableViewController.m */,
+				26B69D421A106A410041E7C2 /* AddDetailsViewController.h */,
+				26B69D431A106A410041E7C2 /* AddDetailsViewController.m */,
+				267F6A091A1377EB0059FDCD /* RequestDetailsViewController.h */,
+				267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */,
+				26B036C71A112A56002D9038 /* FRViewController.h */,
+				26B036C81A112A56002D9038 /* FRViewController.m */,
+				267F6A0C1A13F98D0059FDCD /* FLViewController.h */,
+				267F6A0D1A13F98D0059FDCD /* FLViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
 				265C19AA19F3244F009358C2 /* Supporting Files */,
 			);
@@ -317,13 +373,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B036C61A111987002D9038 /* FLTableViewController.m in Sources */,
 				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
-				265C19BA19F3244F009358C2 /* ViewController.m in Sources */,
-				2695552B19F729FC0064CC16 /* FLTableViewController.m in Sources */,
+				26C857571A0FE6740074B41C /* SplashViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,
+				267F6A0E1A13F98D0059FDCD /* FLViewController.m in Sources */,
+				26B036C91A112A56002D9038 /* FRViewController.m in Sources */,
+				26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,
 				265C19B019F3244F009358C2 /* main.m in Sources */,
 				779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */,
+				267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,15 +506,24 @@
 		265C19D319F3244F009358C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = "GrubClub/GrubClub-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,15 +532,24 @@
 		265C19D419F3244F009358C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = "GrubClub/GrubClub-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
