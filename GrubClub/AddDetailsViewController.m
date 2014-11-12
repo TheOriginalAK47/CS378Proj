@@ -49,7 +49,7 @@
     NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
     [getRequest setObject:[NSNumber numberWithInt:user.ID] forKey:@"user_id"];
     
-
+    
     //make request
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
@@ -67,6 +67,8 @@
         [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
             //NSLog(@"SUCESS WUUUUUT");
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add Successful" message:@"Press Ok to return to Friend Requests." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
         } errorBlock:^(QBResponse *response) {
             // error handling
             NSLog(@"Response error: %@", [response.error description]);
@@ -76,6 +78,12 @@
         // error handling
         NSLog(@"Add failed, Response error: %@", [response.error description]);
     }];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex == 0){
+        [self performSegueWithIdentifier:@"cancel" sender:self];
+    }
 }
 
 
