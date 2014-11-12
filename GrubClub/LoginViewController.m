@@ -86,9 +86,6 @@
 }
 
 - (void)chatDidLogin{
-    NSLog(@"person logged in: %lu", (unsigned long)[[QBChat instance] currentUser].ID);
-    NSLog(@"isloggedin: %d",[[QBChat instance] isLoggedIn]);
-    NSLog(@"login succeeded now creating records");
     [self performSegueWithIdentifier:@"toMain" sender:self];
 }
 //prepare current user for the next screen?

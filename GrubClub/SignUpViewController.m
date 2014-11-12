@@ -164,7 +164,6 @@
         // Sign up was successful
         
         [self login];
-        [self performSegueWithIdentifier:@"toSuccess" sender:self];
     } errorBlock:^(QBResponse *response) {
         // Handle error here
         NSString *errorString = [response.error description];
@@ -183,12 +182,13 @@
         object.className = @"FriendsList"; // your Class name
         QBCOCustomObject *object2 = [QBCOCustomObject customObject];
         object2.className = @"FriendRequests"; // your Class name
+        
         QBCOPermissions *permissions = [QBCOPermissions permissions];
         permissions.updateAccess = QBCOPermissionsAccessOpen;
-        permissions.readAccess = QBCOPermissionsAccessOwner;
-        permissions.deleteAccess = QBCOPermissionsAccessOwner;
-        
+        permissions.readAccess = QBCOPermissionsAccessOpen;
+        permissions.deleteAccess = QBCOPermissionsAccessOpen;
         object2.permissions = permissions;
+        
         
         [QBRequest createObject:object successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             NSLog(@"FriendsList made");
@@ -199,19 +199,27 @@
         [QBRequest createObject:object2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // do something when object is successfully created on a server
             NSLog(@"FriendRequests List made");
+            NSLog(@"Now logging out");
+            [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
+                // Successful logout
+                NSLog(@"Logout successful");
+            } errorBlock:^(QBResponse *response) {
+                // Handle error
+            }];
+            [self performSegueWithIdentifier:@"toSuccess" sender:self];
         } errorBlock:^(QBResponse *response) {
             // error handling
             NSLog(@"Response error: %@", [response.error description]);
         }];
         
         
-        NSLog(@"Now logging out");
-        [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
-            // Successful logout
-            NSLog(@"Logout successful");
-        } errorBlock:^(QBResponse *response) {
-            // Handle error
-        }];
+//        NSLog(@"Now logging out");
+//        [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
+//            // Successful logout
+//            NSLog(@"Logout successful");
+//        } errorBlock:^(QBResponse *response) {
+//            // Handle error
+//        }];
     };
 }
 

@@ -8,6 +8,7 @@
 
 #import "FRViewController.h"
 #import "AddDetailsViewController.h"
+#import "RequestDetailsViewController.h"
 
 @interface FRViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,32 +23,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.requests = [[NSMutableArray alloc] init];
+    self.requestsUsernames = [[NSMutableArray alloc] init];
     currentUser = [[QBChat instance] currentUser];
-    NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
-    [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"_user_id"];
     
+    
+    NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
+    [getRequest setObject:[NSNumber numberWithInt:currentUser.ID] forKey:@"user_id"];
     
     //make request
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
-        // response processing
-        NSLog(@"Friend request list obtained. objects in objects array: %lu", (unsigned long)objects.count);
-        QBCOCustomObject *test2 = [objects objectAtIndex:0];
-        [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+        // response processing;
+        QBCOCustomObject *list = [objects objectAtIndex:0];
+        [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
-            _requests = [[test2.fields objectForKey:@"friendRequests"]mutableCopy];
-            NSLog(@"request array has count of: %lu", (unsigned long)_requests.count);
-            NSLog(@"object at index 0: %@" , [_requests objectAtIndex:0]);
+            _requests = [[list.fields objectForKey:@"friendRequests"]mutableCopy];
+            _requestsUsernames = [[list.fields objectForKey:@"usernames"] mutableCopy];
+            NSLog(@"list arrays updated with %lu objects", (unsigned long)_requests.count);
             [self.tableView reloadData];
         } errorBlock:^(QBResponse *response) {
             // error handling
-            NSLog(@"Response error: %@", [response.error description]);
+            NSLog(@"Could not access custom object. Response error: %@", [response.error description]);
         }];
         
     } errorBlock:^(QBResponse *response) {
         // error handling
-        NSLog(@"finding current user friendrequests failed");
-        NSLog(@"Response error: %@", [response.error description]);
+        NSLog(@"No object found when searching for custom object. Response error: %@", [response.error description]);
     }];
     
     
@@ -58,13 +59,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) convertToStrings {
-    
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"requests number of rows: %lu", (unsigned long)_requests.count);
-    return [self.requests count];
+    return [self.requestsUsernames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,8 +72,8 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-//    cell.textLabel.text = self.requests[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.requests[indexPath.row]];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.requestsUsernames[indexPath.row]];
     return cell;
 }
 
@@ -84,8 +82,11 @@
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Please enter the username of the user you wish to add." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Cancel", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
+    
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
     if(buttonIndex == 0){
         NSString *text = [[alertView textFieldAtIndex:0] text];
         NSLog(@"Entered: %@",text);
@@ -104,24 +105,28 @@
     }
     
 }
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
     if ([segue.identifier isEqualToString:@"toAddDetails"]){
         NSLog(@"QBChat add called");
         AddDetailsViewController *vc = [segue destinationViewController];
         vc.user = searchedUser;
+    }
+    
+    else if ([segue.identifier isEqualToString:@"RequestDetails"]){
+        int target = [[self.requests objectAtIndex:[[self.tableView indexPathForSelectedRow] row]] integerValue];
+        RequestDetailsViewController *vc = segue.destinationViewController;
+        vc.userID = target;
+        NSInteger index = [[self.tableView indexPathForSelectedRow] row];
         
+        vc.otherUsername = [self.requestsUsernames objectAtIndex:index];
+        vc.otherID = [self.requests objectAtIndex:index];
     }
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)cancelPressed:(id)sender {
+    [self performSegueWithIdentifier:@"toFriendsList" sender:self];
 }
-*/
-
 @end

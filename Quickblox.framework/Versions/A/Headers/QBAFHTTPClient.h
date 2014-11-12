@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 #import "QBAFURLConnectionOperation.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #import <Availability.h>
 

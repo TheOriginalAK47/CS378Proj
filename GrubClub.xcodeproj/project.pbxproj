@@ -20,7 +20,7 @@
 		265C19C519F3244F009358C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A719F3244F009358C2 /* UIKit.framework */; };
 		265C19CD19F3244F009358C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 265C19CB19F3244F009358C2 /* InfoPlist.strings */; };
 		265C19CF19F3244F009358C2 /* GrubClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C19CE19F3244F009358C2 /* GrubClubTests.m */; };
-		266EAC191A1016000035CC4D /* FriendRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266EAC181A1016000035CC4D /* FriendRequestsViewController.m */; };
+		267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */; };
 		26B036C61A111987002D9038 /* FLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C51A111987002D9038 /* FLTableViewController.m */; };
 		26B036C91A112A56002D9038 /* FRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B036C81A112A56002D9038 /* FRViewController.m */; };
 		26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D431A106A410041E7C2 /* AddDetailsViewController.m */; };
@@ -79,8 +79,8 @@
 		265C19CA19F3244F009358C2 /* GrubClubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrubClubTests-Info.plist"; sourceTree = "<group>"; };
 		265C19CC19F3244F009358C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		265C19CE19F3244F009358C2 /* GrubClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrubClubTests.m; sourceTree = "<group>"; };
-		266EAC171A1016000035CC4D /* FriendRequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestsViewController.h; sourceTree = "<group>"; };
-		266EAC181A1016000035CC4D /* FriendRequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestsViewController.m; sourceTree = "<group>"; };
+		267F6A091A1377EB0059FDCD /* RequestDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDetailsViewController.h; sourceTree = "<group>"; };
+		267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDetailsViewController.m; sourceTree = "<group>"; };
 		26B036C41A111987002D9038 /* FLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLTableViewController.h; sourceTree = "<group>"; };
 		26B036C51A111987002D9038 /* FLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLTableViewController.m; sourceTree = "<group>"; };
 		26B036C71A112A56002D9038 /* FRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRViewController.h; sourceTree = "<group>"; };
@@ -232,10 +232,10 @@
 				779152FE19F33E9C00E3846C /* LoginViewController.m */,
 				26B69D421A106A410041E7C2 /* AddDetailsViewController.h */,
 				26B69D431A106A410041E7C2 /* AddDetailsViewController.m */,
-				266EAC171A1016000035CC4D /* FriendRequestsViewController.h */,
+				267F6A091A1377EB0059FDCD /* RequestDetailsViewController.h */,
+				267F6A0A1A1377EB0059FDCD /* RequestDetailsViewController.m */,
 				26B036C71A112A56002D9038 /* FRViewController.h */,
 				26B036C81A112A56002D9038 /* FRViewController.m */,
-				266EAC181A1016000035CC4D /* FriendRequestsViewController.m */,
 				265C19BB19F3244F009358C2 /* Images.xcassets */,
 				265C19AA19F3244F009358C2 /* Supporting Files */,
 			);
@@ -376,8 +376,8 @@
 				26B69D441A106A410041E7C2 /* AddDetailsViewController.m in Sources */,
 				779152FC19F338EA00E3846C /* SignUpViewController.m in Sources */,
 				265C19B019F3244F009358C2 /* main.m in Sources */,
-				266EAC191A1016000035CC4D /* FriendRequestsViewController.m in Sources */,
 				779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */,
+				267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

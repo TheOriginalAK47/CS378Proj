@@ -47,7 +47,8 @@
 - (IBAction)addPressed:(id)sender {
     //set up request
     NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
-    [getRequest setObject:[NSNumber numberWithInt:user.ID] forKey:@"_user_id"];
+    [getRequest setObject:[NSNumber numberWithInt:user.ID] forKey:@"user_id"];
+    
 
     //make request
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
@@ -56,8 +57,13 @@
         // response processing
         NSLog(@"add worked. objects in objects array: %lu", (unsigned long)objects.count);
         QBCOCustomObject *test2 = [objects objectAtIndex:0];
-        NSNumber *status = [NSNumber numberWithInteger:user.ID];
-        [test2.fields setObject:status forKey:@"push[friendRequests][]"];
+        QBUUser *current = [[QBChat instance]currentUser];
+        NSLog(@"Current user in AddDetails is id: %d", current.ID);
+        NSNumber *status = [NSNumber numberWithInteger:current.ID];
+        
+        NSLog(@"adding this person to friendrequests: %@", status);
+        [test2.fields setObject:status forKey:@"add_to_set[friendRequests][]"];
+        [test2.fields setObject:current.login forKey:@"add_to_set[usernames][]"];
         [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
             //NSLog(@"SUCESS WUUUUUT");
@@ -74,5 +80,7 @@
 
 
 - (IBAction)cancelPressed:(id)sender {
+    [self performSegueWithIdentifier:@"cancel" sender:self];
+    
 }
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g8l-O9-nDS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g8l-O9-nDS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -286,6 +286,66 @@
             </objects>
             <point key="canvasLocation" x="-1191" y="777"/>
         </scene>
+        <!--Request Details View Controller-->
+        <scene sceneID="775-zk-ZLh">
+            <objects>
+                <viewController id="jfT-vK-sLU" customClass="RequestDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nkT-qX-1PE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ccg-kY-VnG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qmO-Xb-Zji">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requester's Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsM-Hk-fdu">
+                                <rect key="frame" x="16" y="67" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMI-J0-Icv">
+                                <rect key="frame" x="16" y="133" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oo-jA-IH5">
+                                <rect key="frame" x="16" y="186" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV0-XR-kkw">
+                                <rect key="frame" x="137" y="246" width="49" height="30"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptPressed:" destination="jfT-vK-sLU" eventType="touchUpInside" id="Jof-a3-kff"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K10-dg-PbN">
+                                <rect key="frame" x="137" y="300" width="51" height="30"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="declinePressed:" destination="jfT-vK-sLU" eventType="touchUpInside" id="SdF-s2-WtR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="bMI-J0-Icv" id="mzH-zV-41U"/>
+                        <outlet property="usernameLabel" destination="0Oo-jA-IH5" id="JMT-z9-Uyg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B41-4H-d4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1279" y="1402"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="3pL-1Q-dWl">
             <objects>
@@ -302,7 +362,11 @@
                                 <rect key="frame" x="0.0" y="24" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Friend Requests" id="gx9-8M-Gp1">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZTC-c3-zHQ"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ZTC-c3-zHQ">
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="gno-C6-ttA" id="gIU-zW-hH4"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Search" id="2XV-w8-Klv">
                                             <connections>
                                                 <action selector="searchPressed:" destination="gno-C6-ttA" id="x5O-m1-tzd"/>
@@ -314,6 +378,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g9o-Ij-h6q">
                                 <rect key="frame" x="0.0" y="68" width="327" height="505"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="cg7-M1-j7T">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cg7-M1-j7T" id="uVL-hT-mE9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jfT-vK-sLU" kind="modal" identifier="RequestDetails" id="FzZ-Zx-6p8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="gno-C6-ttA" id="RNi-Q0-dYp"/>
                                     <outlet property="delegate" destination="gno-C6-ttA" id="djN-2H-Gpy"/>
@@ -325,6 +401,7 @@
                     <connections>
                         <outlet property="tableView" destination="g9o-Ij-h6q" id="Eom-5a-Kf9"/>
                         <segue destination="1KU-o7-Pob" kind="modal" identifier="toAddDetails" id="JuV-O2-GtR"/>
+                        <segue destination="Tcb-Ks-igC" kind="modal" identifier="toFriendsList" id="ruw-21-xNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDI-sy-LeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,14 +420,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8e-mQ-b1m">
-                                <rect key="frame" x="16" y="99" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqm-Q5-t8a">
-                                <rect key="frame" x="16" y="157" width="288" height="21"/>
+                                <rect key="frame" x="16" y="179" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -373,12 +444,25 @@
                                     <action selector="addPressed:" destination="1KU-o7-Pob" eventType="touchUpInside" id="PpP-hn-Wy4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Is this the person you wish to add?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fD-nh-cHG">
+                                <rect key="frame" x="16" y="53" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8e-mQ-b1m">
+                                <rect key="frame" x="16" y="132" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="label1" destination="B8e-mQ-b1m" id="GUd-7H-ZXc"/>
                         <outlet property="label2" destination="hqm-Q5-t8a" id="cqZ-yl-7QM"/>
+                        <segue destination="gno-C6-ttA" kind="modal" identifier="cancel" id="ecH-Uo-J90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNt-nt-uKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,6 +583,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="ruw-21-xNg"/>
+        <segue reference="ecH-Uo-J90"/>
         <segue reference="Dgs-Q2-YuK"/>
         <segue reference="nUb-U7-DcC"/>
     </inferredMetricsTieBreakers>
