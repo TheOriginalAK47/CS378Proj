@@ -289,12 +289,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9C-sr-QFj">
+                                <rect key="frame" x="40" y="67" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nLx-XZ-0d7"/>
                     <connections>
                         <outlet property="callButton" destination="O9H-c0-Hfd" id="2Ge-nH-vEd"/>
+                        <outlet property="myVideoView" destination="ftm-N4-ldL" id="cyh-mr-a0u"/>
+                        <outlet property="opponentVideoView" destination="i9C-sr-QFj" id="g3O-rL-Csj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTG-NS-A7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -663,9 +668,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eoc-WZ-nFp"/>
-        <segue reference="jcD-Q7-78M"/>
         <segue reference="Cto-ex-hP8"/>
+        <segue reference="jcD-Q7-78M"/>
+        <segue reference="eoc-WZ-nFp"/>
         <segue reference="nUb-U7-DcC"/>
     </inferredMetricsTieBreakers>
 </document>

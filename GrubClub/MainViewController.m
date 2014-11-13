@@ -165,7 +165,7 @@
     NSLog(@"chatDidReceiveCallRequestFromUser %lu", (unsigned long)userID);
     
     // save  opponent data
-    videoChatOpponentID = userID;
+    videoChatOpponentID = [opponentID integerValue];
     videoChatConferenceType = conferenceType;
     sessionID = _sessionID;
     
