@@ -57,22 +57,37 @@
         // response processing
         NSLog(@"add worked. objects in objects array: %lu", (unsigned long)objects.count);
         QBCOCustomObject *test2 = [objects objectAtIndex:0];
+        NSMutableArray *friendsIDs = [[test2.fields objectForKey:@"friendRequests"]mutableCopy];
         QBUUser *current = [[QBChat instance]currentUser];
-        NSLog(@"Current user in AddDetails is id: %d", current.ID);
-        NSNumber *status = [NSNumber numberWithInteger:current.ID];
+        BOOL alreadyRequested = NO;
+        for (int i = 0; i < friendsIDs.count; i++){
+            if ([[friendsIDs objectAtIndex:i]integerValue] == current.ID){
+                alreadyRequested = YES;
+                break;
+            }
+        }
         
-        NSLog(@"adding this person to friendrequests: %@", status);
-        [test2.fields setObject:status forKey:@"add_to_set[friendRequests][]"];
-        [test2.fields setObject:current.login forKey:@"add_to_set[usernames][]"];
-        [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
-            // object updated
-            //NSLog(@"SUCESS WUUUUUT");
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add Successful" message:@"Press Ok to return to Friend Requests." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        if(alreadyRequested){
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add Failed" message:@"You have already sent this person a friend request." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
-        } errorBlock:^(QBResponse *response) {
-            // error handling
-            NSLog(@"Response error: %@", [response.error description]);
-        }];
+        }
+        else{
+            NSLog(@"Current user in AddDetails is id: %lu", (unsigned long)current.ID);
+            NSNumber *status = [NSNumber numberWithInteger:current.ID];
+            
+            NSLog(@"adding this person to friendrequests: %@", status);
+            [test2.fields setObject:status forKey:@"add_to_set[friendRequests][]"];
+            [test2.fields setObject:current.login forKey:@"add_to_set[usernames][]"];
+            [QBRequest updateObject:test2 successBlock:^(QBResponse *response, QBCOCustomObject *object) {
+                // object updated
+                //NSLog(@"SUCESS WUUUUUT");
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add Successful" message:@"Press Ok to return to Friend Requests." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+            } errorBlock:^(QBResponse *response) {
+                // error handling
+                NSLog(@"Response error: %@", [response.error description]);
+            }];
+        }
         
     } errorBlock:^(QBResponse *response) {
         // error handling

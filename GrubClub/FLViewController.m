@@ -18,7 +18,7 @@
 @synthesize currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSTimer scheduledTimerWithTimeInterval:60 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
     NSLog(@"friendslist viewcontroller called");
     // Do any additional setup after loading the view.
     
