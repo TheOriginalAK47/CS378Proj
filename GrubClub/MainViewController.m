@@ -95,7 +95,7 @@
         // Finish call
         //
         [self.videoChat finishCall];
-        
+        opponentVideoView.hidden = YES;
         myVideoView.hidden = YES;
         //opponentVideoView.layer.contents = (id)[[UIImage imageNamed:@"person.png"] CGImage];
         //opponentVideoView.image = [UIImage imageNamed:@"person.png"];
@@ -162,6 +162,7 @@
     [startingCallActivityIndicator startAnimating];
     
      myVideoView.hidden = NO;
+    opponentVideoView.hidden = NO;
     
     ringingPlayer = nil;
 }
@@ -260,6 +261,7 @@
     callButton.tag = 102;
     
      myVideoView.hidden = NO;
+    opponentVideoView.hidden = NO;
     
     [startingCallActivityIndicator startAnimating];
 }
@@ -279,6 +281,7 @@
     
     }else{
         myVideoView.hidden = YES;
+        opponentVideoView.hidden = YES;
         //opponentVideoView.layer.contents = (id)[[UIImage imageNamed:@"person.png"] CGImage];
         opponentVideoView.layer.borderWidth = 1;
         //AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
