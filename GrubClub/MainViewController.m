@@ -61,6 +61,9 @@
 }
 
 - (IBAction)call:(id)sender{
+    if(callButton.tag == 101){
+        callButton.tag = 102;
+        
         // Call
         
         // Setup video chat
@@ -75,16 +78,39 @@
         //
         self.videoChat.useHeadphone = audioOutput.selectedSegmentIndex;
         self.videoChat.useBackCamera = videoOutput.selectedSegmentIndex;
-    
+        
         // Call user by ID
         //
         [self.videoChat callUser:[opponentID integerValue] conferenceType:QBVideoChatConferenceTypeAudioAndVideo];
-
+        
         callButton.hidden = YES;
         ringigngLabel.hidden = NO;
         ringigngLabel.text = @"Calling...";
         ringigngLabel.frame = CGRectMake(128, 375, 90, 37);
         callingActivityIndicator.hidden = NO;
+        // Finish
+    }else{
+        callButton.tag = 101;
+        
+        // Finish call
+        //
+        [self.videoChat finishCall];
+        
+        myVideoView.hidden = YES;
+        //opponentVideoView.layer.contents = (id)[[UIImage imageNamed:@"person.png"] CGImage];
+        //opponentVideoView.image = [UIImage imageNamed:@"person.png"];
+        [callButton setTitle:@"Call" forState:UIControlStateNormal];
+        
+        opponentVideoView.layer.borderWidth = 1;
+        
+        [startingCallActivityIndicator stopAnimating];
+        
+        
+        // release video chat
+        //
+        [[QBChat instance] unregisterVideoChatInstance:self.videoChat];
+        self.videoChat = nil;
+    }
 }
 
 - (void)reject{
@@ -109,7 +135,6 @@
 
 - (void)accept{
     NSLog(@"accept");
-    
     // Setup video chat
     //
     if(self.videoChat == nil){
@@ -203,7 +228,7 @@
     callButton.hidden = NO;
     ringigngLabel.hidden = YES;
     callingActivityIndicator.hidden = YES;
-    //callButton.tag = 101;
+    callButton.tag = 101;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QuickBlox VideoChat" message:@"User isn't answering. Please try again." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
@@ -232,7 +257,7 @@
     
     callButton.hidden = NO;
     [callButton setTitle:@"Hang up" forState:UIControlStateNormal];
-    //callButton.tag = 102;
+    callButton.tag = 102;
     
      myVideoView.hidden = NO;
     
@@ -254,11 +279,11 @@
     
     }else{
         myVideoView.hidden = YES;
-        opponentVideoView.layer.contents = (id)[[UIImage imageNamed:@"person.png"] CGImage];
+        //opponentVideoView.layer.contents = (id)[[UIImage imageNamed:@"person.png"] CGImage];
         opponentVideoView.layer.borderWidth = 1;
         //AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [callButton setTitle:curUser.fullName forState:UIControlStateNormal];
-        //callButton.tag = 101;
+        callButton.tag = 101;
     }
     
     callButton.hidden = NO;
