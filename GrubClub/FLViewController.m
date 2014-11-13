@@ -10,8 +10,8 @@
 
 @interface FLViewController ()
 - (IBAction)signoutPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)addPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation FLViewController
@@ -56,15 +56,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"videoSegue"]) {
+        MainViewController *vc = [segue destinationViewController];
+        int tableIndex = [[self.tableView indexPathForSelectedRow] row];
+        vc.opponentID = [self.friendsList objectAtIndex:tableIndex];
+        vc.opponentUsername = [self.usernames objectAtIndex:tableIndex];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.usernames count];
 //    return 0;
@@ -85,6 +91,7 @@
     [self performSegueWithIdentifier:@"toFR" sender:self];
 
 }
+
 - (IBAction)signoutPressed:(id)sender {
     [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
         // Successful logout

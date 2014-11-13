@@ -34,6 +34,7 @@
 		26C857521A0FE5730074B41C /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857511A0FE5730074B41C /* libresolv.dylib */; };
 		26C857541A0FE57C0074B41C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857531A0FE57C0074B41C /* libxml2.dylib */; };
 		26C857571A0FE6740074B41C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C857561A0FE6740074B41C /* SplashViewController.m */; };
+		498897671A143556003106A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498897651A143556003106A5 /* MainViewController.m */; };
 		49B0ECEA1A11BD940046C4FD /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */; };
 		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
 		779152E619F3352200E3846C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E319F3352200E3846C /* Parse.framework */; };
@@ -98,6 +99,8 @@
 		26C857531A0FE57C0074B41C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		26C857551A0FE6740074B41C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		26C857561A0FE6740074B41C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		498897641A143556003106A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		498897651A143556003106A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		779152E219F3352200E3846C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		779152E319F3352200E3846C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 		265C19A919F3244F009358C2 /* GrubClub */ = {
 			isa = PBXGroup;
 			children = (
+				498897641A143556003106A5 /* MainViewController.h */,
+				498897651A143556003106A5 /* MainViewController.m */,
 				265C19B219F3244F009358C2 /* AppDelegate.h */,
 				265C19B319F3244F009358C2 /* AppDelegate.m */,
 				26C857551A0FE6740074B41C /* SplashViewController.h */,
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498897671A143556003106A5 /* MainViewController.m in Sources */,
 				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
 				26C857571A0FE6740074B41C /* SplashViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Quickblox/Quickblox.h>
+#import "MainViewController.h"
 
 @interface FLViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *friendsList;

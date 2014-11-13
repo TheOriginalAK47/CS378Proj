@@ -36,8 +36,6 @@
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
         // response processing;
-        NSLog(@"Objects: ");
-        NSLog(@"%@", objects);
         QBCOCustomObject *list = [objects objectAtIndex:0];
         [QBRequest updateObject:list successBlock:^(QBResponse *response, QBCOCustomObject *object) {
             // object updated
