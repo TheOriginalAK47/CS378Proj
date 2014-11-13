@@ -110,24 +110,29 @@
     user.password = self.userPassword.text;
     user.email = self.userEmail.text;
     user.fullName = self.personalName.text;
-    
-    UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Account Info" message:@"The email, username, or password you entered is not allowed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    NSString *invalid;
     
     bool valid = YES;
     if (![self usernameValid:user.login]) {
         NSLog(@"Bad username");
+        invalid = @"Invalid username";
         valid = NO;
     } if (![self passwordValid:user.password]) {
         NSLog(@"Bad password");
         valid = NO;
+        invalid = @"Invalid password";
     } if (![self emailValid:user.email]) {
         NSLog(@"Bad email");
         valid = NO;
+        invalid = @"Invalid email";
     } if (![self personalNameValid:_personalName.text]) {
         NSLog(@"Bad personal name");
         valid = NO;
+        invalid = @"Invalid name";
     }
+    NSString *error =[NSString stringWithFormat:@"You have entered an %@",invalid];
     if (!valid) {
+        UIAlertView *SignupFailed = [[UIAlertView alloc]initWithTitle:@"Invalid Account Info" message:error delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [SignupFailed show];
         NSLog(@"Invalid username, password, email, or personal name."); // Can change to provide more info later but for now this should work.
         return;
@@ -140,13 +145,23 @@
         [self login];
     } errorBlock:^(QBResponse *response) {
         // Handle error here
-        NSLog(@"%@", [response.error description]);
-        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+        if ([user.password length] < 8 ){
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                 message:@"Password must be 8 characters long."
+                                                                delegate:self
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+            [errorAlert show];
+        }
+        else{
+            NSLog(@"%@", [response.error description]);
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                            message:@"Email or username already taken. Try another."
                                                           delegate:self
                                                  cancelButtonTitle:@"OK"
                                                  otherButtonTitles:nil];
-        [errorAlert show];
+            [errorAlert show];
+        }
     }];
     
 }

@@ -45,7 +45,7 @@
     // Start sending chat presence
     //
     [QBChat instance].delegate = self;
-    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
 }
 
 - (IBAction)audioOutputDidChange:(UISegmentedControl *)sender{
