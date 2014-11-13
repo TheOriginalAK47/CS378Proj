@@ -187,14 +187,14 @@
     
     // play call music
     //
-    if(ringingPlayer == nil){
-        NSString *path =[[NSBundle mainBundle] pathForResource:@"ringing" ofType:@"wav"];
-        NSURL *url = [NSURL fileURLWithPath:path];
-        ringingPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
-        ringingPlayer.delegate = self;
-        [ringingPlayer setVolume:1.0];
-        [ringingPlayer play];
-    }
+//    if(ringingPlayer == nil){
+//        NSString *path =[[NSBundle mainBundle] pathForResource:@"ringing" ofType:@"wav"];
+//        NSURL *url = [NSURL fileURLWithPath:path];
+//        ringingPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
+//        ringingPlayer.delegate = self;
+//        [ringingPlayer setVolume:1.0];
+//        [ringingPlayer play];
+//    }
 }
 
 -(void) chatCallUserDidNotAnswer:(NSUInteger)userID{
