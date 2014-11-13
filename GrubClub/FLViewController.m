@@ -93,11 +93,10 @@
 }
 
 - (IBAction)signoutPressed:(id)sender {
-    [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
-        // Successful logout
-        [self performSegueWithIdentifier:@"backToLogin" sender:self];
-    } errorBlock:^(QBResponse *response) {
-        // Handle error
-    }];
+    NSLog(@"signing out");
+    if([[QBChat instance] isLoggedIn]){
+        [[QBChat instance] logout];
+    }
+    [self performSegueWithIdentifier:@"backToLogin" sender:self];
 }
 @end
