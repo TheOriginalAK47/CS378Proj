@@ -90,19 +90,27 @@
     
     if(buttonIndex == 0){
         NSString *text = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"Entered: %@",text);
-        [QBRequest userWithLogin:text
-                    successBlock:^(QBResponse *response, QBUUser *user){
-                        NSLog(@"QBUUser login: %@",user.login );
-                        searchedUser = user;
-                        [self performSegueWithIdentifier:@"toAddDetails" sender:self];
-                        
-                    }errorBlock:^(QBResponse *response){
-                        NSString * error = [response.error description];
-                        NSLog(@"error is this: %@",error);
-                        UIAlertView *SearchFailed = [[UIAlertView alloc]initWithTitle:@"Search Failed" message:@"Could not find user." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                        [SearchFailed show];
-                    }];
+        if( ([currentUser.login caseInsensitiveCompare:text] == NSOrderedSame) && text!=nil) {
+            UIAlertView *SearchFailed = [[UIAlertView alloc]initWithTitle:@"Search Failed" message:@"Cannot add yourself." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            [SearchFailed show];
+            // strings are equal except for possibly case
+        }
+        else if(text!=nil){
+            NSLog(@"Entered: %@",text);
+            [QBRequest userWithLogin:text
+                        successBlock:^(QBResponse *response, QBUUser *user){
+                            NSLog(@"QBUUser login: %@",user.login );
+                            searchedUser = user;
+                            [self performSegueWithIdentifier:@"toAddDetails" sender:self];
+                            
+                        }errorBlock:^(QBResponse *response){
+                            NSString * error = [response.error description];
+                            NSLog(@"error is this: %@",error);
+                            UIAlertView *SearchFailed = [[UIAlertView alloc]initWithTitle:@"Search Failed" message:@"Could not find user." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                            [SearchFailed show];
+                        }];
+            
+        }
     }
     
 }
