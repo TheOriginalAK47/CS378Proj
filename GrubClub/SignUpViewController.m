@@ -101,16 +101,6 @@
     }
 }
 
-// No longer valid by now using Quickblox
--(BOOL) usernameTaken:(NSString *)username {
-    return NO;
-}
-
-// No longer valid by now using Quickblox
--(BOOL) emailTaken:(NSString *)email {
-    return NO;
-}
-
 - (IBAction)submitInformation:(id)sender {
 //    PFUser *user = [PFUser user];
 //    user.username = self.userName.text;
@@ -143,22 +133,6 @@
         return;
     }
     
-    
-    //TODO: username taken
-//    if ([self usernameTaken:user.login]) {
-//        UIAlertView *usernameTaken = [[UIAlertView alloc]initWithTitle:@"Account Name Taken" message:@"It looks like another user has already taken that username. Please try using another." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-//        [usernameTaken show];
-//        NSLog(@"Username already in Parse DB");
-//        return;
-//    }
-//    
-//    if ([self emailTaken:user.email]) {
-//        UIAlertView *emailTaken = [[UIAlertView alloc]initWithTitle:@"Account with email exists" message:@"There is already an account registered with that email. Please use another." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-//        [emailTaken show];
-//        NSLog(@"Email already in Parse DB");
-//        return;
-//    }
-    
     // Registration/sign up of User
     [QBRequest signUp:user successBlock:^(QBResponse *response, QBUUser *user) {
         // Sign up was successful
@@ -166,10 +140,13 @@
         [self login];
     } errorBlock:^(QBResponse *response) {
         // Handle error here
-        NSString *errorString = [response.error description];
-        //            // Show the errorString somewhere and let the user try again.
-        NSLog(@"%@", errorString);
-        
+        NSLog(@"%@", [response.error description]);
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                           message:@"Email or username already taken. Try another."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+        [errorAlert show];
     }];
     
 }
