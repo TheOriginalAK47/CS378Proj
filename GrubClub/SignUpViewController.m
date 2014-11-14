@@ -77,7 +77,7 @@
 
 -(BOOL) passwordValid:(NSString *)password {
     NSError *error = NULL;
-    NSRegularExpression *passwordRegex = [NSRegularExpression regularExpressionWithPattern:@"^[A-Za-z0-9_-]{6,18}$" options:0 error:&error];
+    NSRegularExpression *passwordRegex = [NSRegularExpression regularExpressionWithPattern:@"^[A-Za-z0-9_-]{8,18}$" options:0 error:&error];
     NSUInteger numberOfMatches = [passwordRegex numberOfMatchesInString:password options:0
                                   range:NSMakeRange(0, [password length])]; // Check full string
     if (numberOfMatches < 1) {
@@ -145,15 +145,6 @@
         [self login];
     } errorBlock:^(QBResponse *response) {
         // Handle error here
-        if ([user.password length] < 8 ){
-            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                 message:@"Password must be 8 characters long."
-                                                                delegate:self
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil];
-            [errorAlert show];
-        }
-        else{
             NSLog(@"%@", [response.error description]);
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                            message:@"Email or username already taken. Try another."
@@ -161,7 +152,6 @@
                                                  cancelButtonTitle:@"OK"
                                                  otherButtonTitles:nil];
             [errorAlert show];
-        }
     }];
     
 }
