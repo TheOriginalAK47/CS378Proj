@@ -35,7 +35,6 @@
 		26C857541A0FE57C0074B41C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857531A0FE57C0074B41C /* libxml2.dylib */; };
 		26C857571A0FE6740074B41C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C857561A0FE6740074B41C /* SplashViewController.m */; };
 		495DA96A1A1C1A1D0086A8C7 /* grubclub.png in Resources */ = {isa = PBXBuildFile; fileRef = 495DA9691A1C1A1D0086A8C7 /* grubclub.png */; };
-		495DA96C1A1C23AF0086A8C7 /* grubclub.png in Resources */ = {isa = PBXBuildFile; fileRef = 495DA96B1A1C23AF0086A8C7 /* grubclub.png */; };
 		498897671A143556003106A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498897651A143556003106A5 /* MainViewController.m */; };
 		49B0ECEA1A11BD940046C4FD /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */; };
 		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
@@ -102,7 +101,6 @@
 		26C857551A0FE6740074B41C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		26C857561A0FE6740074B41C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		495DA9691A1C1A1D0086A8C7 /* grubclub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grubclub.png; sourceTree = "<group>"; };
-		495DA96B1A1C23AF0086A8C7 /* grubclub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grubclub.png; sourceTree = "<group>"; };
 		498897641A143556003106A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		498897651A143556003106A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		265C19AA19F3244F009358C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				495DA96B1A1C23AF0086A8C7 /* grubclub.png */,
 				495DA9691A1C1A1D0086A8C7 /* grubclub.png */,
 				265C19AB19F3244F009358C2 /* GrubClub-Info.plist */,
 				265C19AC19F3244F009358C2 /* InfoPlist.strings */,
@@ -361,7 +358,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495DA96C1A1C23AF0086A8C7 /* grubclub.png in Resources */,
 				265C19BC19F3244F009358C2 /* Images.xcassets in Resources */,
 				495DA96A1A1C1A1D0086A8C7 /* grubclub.png in Resources */,
 				265C19AE19F3244F009358C2 /* InfoPlist.strings in Resources */,
