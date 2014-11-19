@@ -49,7 +49,7 @@
     NSMutableDictionary *getRequest = [NSMutableDictionary dictionary];
     [getRequest setObject:[NSNumber numberWithInt:user.ID] forKey:@"user_id"];
     
-
+    
     //make request
     [QBRequest objectsWithClassName:@"FriendRequests" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
@@ -67,11 +67,11 @@
             }
         }
         
-        if(alreadyRequested){
+        if(alreadyRequested) {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add Failed" message:@"You have already sent this person a friend request." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
         }
-        else{
+        else {
             NSLog(@"Current user in AddDetails is id: %lu", (unsigned long)current.ID);
             NSNumber *status = [NSNumber numberWithInteger:current.ID];
             
@@ -88,7 +88,6 @@
                 NSLog(@"Response error: %@", [response.error description]);
             }];
         }
-        
     } errorBlock:^(QBResponse *response) {
         // error handling
         NSLog(@"Add failed, Response error: %@", [response.error description]);
