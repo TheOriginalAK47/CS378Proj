@@ -268,7 +268,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-JP-jO0">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="R1S-CP-WAv">
+                                    <navigationItem title="Video Chat" id="R1S-CP-WAv">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="fiO-Db-g3Y">
                                             <connections>
                                                 <segue destination="H7f-R8-c0u" kind="modal" id="jcD-Q7-78M"/>
@@ -690,8 +690,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Dgs-Q2-YuK"/>
-        <segue reference="cg2-pU-xq3"/>
-        <segue reference="eoc-WZ-nFp"/>
         <segue reference="nUb-U7-DcC"/>
+        <segue reference="jcD-Q7-78M"/>
+        <segue reference="eoc-WZ-nFp"/>
     </inferredMetricsTieBreakers>
 </document>
