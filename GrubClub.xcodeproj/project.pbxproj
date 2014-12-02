@@ -34,7 +34,10 @@
 		26C857521A0FE5730074B41C /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857511A0FE5730074B41C /* libresolv.dylib */; };
 		26C857541A0FE57C0074B41C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C857531A0FE57C0074B41C /* libxml2.dylib */; };
 		26C857571A0FE6740074B41C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C857561A0FE6740074B41C /* SplashViewController.m */; };
+		4937AF4F1A2D72C400F1E172 /* FriendsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AF4E1A2D72C400F1E172 /* FriendsListCell.m */; };
 		495DA96A1A1C1A1D0086A8C7 /* grubclub.png in Resources */ = {isa = PBXBuildFile; fileRef = 495DA9691A1C1A1D0086A8C7 /* grubclub.png */; };
+		496370AD1A2822E900A08B8D /* greendot.png in Resources */ = {isa = PBXBuildFile; fileRef = 496370AB1A2822E900A08B8D /* greendot.png */; };
+		496370AE1A2822E900A08B8D /* reddot.png in Resources */ = {isa = PBXBuildFile; fileRef = 496370AC1A2822E900A08B8D /* reddot.png */; };
 		498897671A143556003106A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498897651A143556003106A5 /* MainViewController.m */; };
 		49B0ECEA1A11BD940046C4FD /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */; };
 		779152E519F3352200E3846C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779152E219F3352200E3846C /* Bolts.framework */; };
@@ -100,7 +103,11 @@
 		26C857531A0FE57C0074B41C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		26C857551A0FE6740074B41C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		26C857561A0FE6740074B41C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		4937AF4D1A2D72C400F1E172 /* FriendsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListCell.h; sourceTree = "<group>"; };
+		4937AF4E1A2D72C400F1E172 /* FriendsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListCell.m; sourceTree = "<group>"; };
 		495DA9691A1C1A1D0086A8C7 /* grubclub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grubclub.png; sourceTree = "<group>"; };
+		496370AB1A2822E900A08B8D /* greendot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendot.png; sourceTree = "<group>"; };
+		496370AC1A2822E900A08B8D /* reddot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reddot.png; sourceTree = "<group>"; };
 		498897641A143556003106A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		498897651A143556003106A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		49B0ECE81A11BA2C0046C4FD /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
@@ -171,6 +178,8 @@
 		265C199719F3244F009358C2 = {
 			isa = PBXGroup;
 			children = (
+				4937AF4D1A2D72C400F1E172 /* FriendsListCell.h */,
+				4937AF4E1A2D72C400F1E172 /* FriendsListCell.m */,
 				265C19A919F3244F009358C2 /* GrubClub */,
 				265C19C819F3244F009358C2 /* GrubClubTests */,
 				265C19A219F3244F009358C2 /* Frameworks */,
@@ -252,6 +261,8 @@
 		265C19AA19F3244F009358C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				496370AB1A2822E900A08B8D /* greendot.png */,
+				496370AC1A2822E900A08B8D /* reddot.png */,
 				495DA9691A1C1A1D0086A8C7 /* grubclub.png */,
 				265C19AB19F3244F009358C2 /* GrubClub-Info.plist */,
 				265C19AC19F3244F009358C2 /* InfoPlist.strings */,
@@ -327,9 +338,10 @@
 				ORGANIZATIONNAME = HelloWorld;
 				TargetAttributes = {
 					265C199F19F3244F009358C2 = {
-						DevelopmentTeam = CMDDRLZ9LP;
+						DevelopmentTeam = L8KHDD6QT3;
 					};
 					265C19C019F3244F009358C2 = {
+						DevelopmentTeam = L8KHDD6QT3;
 						TestTargetID = 265C199F19F3244F009358C2;
 					};
 				};
@@ -359,7 +371,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				265C19BC19F3244F009358C2 /* Images.xcassets in Resources */,
+				496370AD1A2822E900A08B8D /* greendot.png in Resources */,
 				495DA96A1A1C1A1D0086A8C7 /* grubclub.png in Resources */,
+				496370AE1A2822E900A08B8D /* reddot.png in Resources */,
 				265C19AE19F3244F009358C2 /* InfoPlist.strings in Resources */,
 				265C19B719F3244F009358C2 /* Main.storyboard in Resources */,
 			);
@@ -391,6 +405,7 @@
 				265C19B019F3244F009358C2 /* main.m in Sources */,
 				779152FF19F33E9C00E3846C /* LoginViewController.m in Sources */,
 				267F6A0B1A1377EB0059FDCD /* RequestDetailsViewController.m in Sources */,
+				4937AF4F1A2D72C400F1E172 /* FriendsListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +531,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
@@ -532,6 +549,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -542,6 +560,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrubClub/GrubClub-Prefix.pch";
@@ -558,6 +578,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -164,6 +164,8 @@
         object.className = @"FriendsList"; // your Class name
         QBCOCustomObject *object2 = [QBCOCustomObject customObject];
         object2.className = @"FriendRequests"; // your Class name
+        QBCOCustomObject *userSession = [QBCOCustomObject customObject];
+        userSession.className = @"activeSession";
         
         QBCOPermissions *permissions = [QBCOPermissions permissions];
         permissions.updateAccess = QBCOPermissionsAccessOpen;
@@ -172,6 +174,7 @@
         
         object2.permissions = permissions;
         object.permissions = permissions;
+        userSession.permissions = permissions;
         
         
         [QBRequest createObject:object successBlock:^(QBResponse *response, QBCOCustomObject *object) {
@@ -194,6 +197,13 @@
         } errorBlock:^(QBResponse *response) {
             // error handling
             NSLog(@"Response error: %@", [response.error description]);
+        }];
+        
+        [QBRequest createObject:userSession successBlock:^(QBResponse *response, QBCOCustomObject *userSession) {
+            NSLog(@"UserSession token made");
+        } errorBlock:^(QBResponse *response) {
+            // error handling
+            NSLog(@"Failed to make token. Response error: %@", [response.error description]);
         }];
         
         

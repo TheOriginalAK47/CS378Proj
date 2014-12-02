@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Quickblox/Quickblox.h>
 #import "MainViewController.h"
+#import "FriendsListCell.h"
 
 @interface FLViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *friendsList;
 @property NSMutableArray *usernames;
 @property QBUUser *currentUser;
+//@property (nonatomic, strong) IBOutlet UILabel *contactName;
+//@property (nonatomic, strong) IBOutlet UIImageView *contactStatus;
 @end
