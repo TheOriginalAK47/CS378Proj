@@ -7,7 +7,7 @@
 //
 
 #import "FLViewController.h"
-
+#import "ChatService.h"
 @interface FLViewController ()
 - (IBAction)signoutPressed:(id)sender;
 - (IBAction)addPressed:(id)sender;
@@ -18,10 +18,10 @@
 @synthesize currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
     NSLog(@"friendslist viewcontroller called");
     // Do any additional setup after loading the view.
-    
+    [[ChatService instance] setViewController:self];
     self.friendsList = [[NSMutableArray alloc] init];
     self.usernames = [[NSMutableArray alloc] init];
     currentUser = [[QBChat instance] currentUser];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263FF3551A2CE28400B49ADB /* ChatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 263FF3541A2CE28400B49ADB /* ChatService.m */; };
 		265C19A419F3244F009358C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A319F3244F009358C2 /* Foundation.framework */; };
 		265C19A619F3244F009358C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A519F3244F009358C2 /* CoreGraphics.framework */; };
 		265C19A819F3244F009358C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C19A719F3244F009358C2 /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		263FF3531A2CE28400B49ADB /* ChatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatService.h; sourceTree = "<group>"; };
+		263FF3541A2CE28400B49ADB /* ChatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatService.m; sourceTree = "<group>"; };
 		265C19A019F3244F009358C2 /* GrubClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrubClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265C19A319F3244F009358C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		265C19A519F3244F009358C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,8 @@
 			children = (
 				498897641A143556003106A5 /* MainViewController.h */,
 				498897651A143556003106A5 /* MainViewController.m */,
+				263FF3531A2CE28400B49ADB /* ChatService.h */,
+				263FF3541A2CE28400B49ADB /* ChatService.m */,
 				265C19B219F3244F009358C2 /* AppDelegate.h */,
 				265C19B319F3244F009358C2 /* AppDelegate.m */,
 				26C857551A0FE6740074B41C /* SplashViewController.h */,
@@ -381,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				498897671A143556003106A5 /* MainViewController.m in Sources */,
+				263FF3551A2CE28400B49ADB /* ChatService.m in Sources */,
 				7791530219F348FE00E3846C /* forgotPwViewController.m in Sources */,
 				26C857571A0FE6740074B41C /* SplashViewController.m in Sources */,
 				265C19B419F3244F009358C2 /* AppDelegate.m in Sources */,

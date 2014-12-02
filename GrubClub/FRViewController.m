@@ -9,7 +9,7 @@
 #import "FRViewController.h"
 #import "AddDetailsViewController.h"
 #import "RequestDetailsViewController.h"
-
+#import "ChatService.h"
 @interface FRViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -21,6 +21,7 @@
 @synthesize currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[ChatService instance] setViewController:self];
     // Do any additional setup after loading the view.
     self.requests = [[NSMutableArray alloc] init];
     self.requestsUsernames = [[NSMutableArray alloc] init];

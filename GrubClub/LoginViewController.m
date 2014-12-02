@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "ChatService.h"
 @interface LoginViewController ()
 
 @end
@@ -67,10 +68,16 @@
         current.password = userPassword; // your current user's password
         
         // set Chat delegate
-        [QBChat instance].delegate = self;
+//        [QBChat instance].delegate = self;
         
         // login to Chat
-        [[QBChat instance] loginWithUser:current];
+//        [[QBChat instance] loginWithUser:current];
+        [[ChatService instance] loginWithUser:current completionBlock:^{
+            
+            // hide alert after delay
+            [self performSegueWithIdentifier:@"toMain" sender:self];
+        }];
+        
         
     } errorBlock:^(QBResponse *response) {
         // error handling
@@ -79,6 +86,7 @@
         NSLog(@"error is this: %@",error);
         UIAlertView *LoginFailed = [[UIAlertView alloc]initWithTitle:@"Incorrect Login" message:@"The username or password you entered was incorrect. Please try again." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [LoginFailed show];
+        
     }];
     
     

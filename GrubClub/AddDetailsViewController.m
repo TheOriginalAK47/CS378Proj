@@ -11,7 +11,7 @@
  3. cancel button
  */
 #import "AddDetailsViewController.h"
-
+#import "ChatService.h"
 @interface AddDetailsViewController ()
 @end
 
@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[ChatService instance] setViewController:self];
     // Do any additional setup after loading the view.
     NSString *name = [NSString stringWithFormat:@"Name: %@",user.fullName];
     _label1.text = name;
