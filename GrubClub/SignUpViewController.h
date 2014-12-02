@@ -18,7 +18,5 @@
 -(BOOL)passwordValid:(NSString *)password;
 -(BOOL)usernameValid:(NSString *)username;
 -(BOOL)emailValid:(NSString *)email;
--(BOOL)usernameTaken:(NSString *)username;
--(BOOL)emailTaken:(NSString *)email;
 
 @end
