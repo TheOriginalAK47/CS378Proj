@@ -8,6 +8,7 @@
 
 #import "RequestDetailsViewController.h"
 #import <Quickblox/Quickblox.h>
+#import "ChatService.h"
 @interface RequestDetailsViewController ()
 
 @end
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[ChatService instance] setViewController:self];
     NSLog(@"requests array count in RequestDetail is: %d", requests.count);
     // Do any additional setup after loading the view.
     

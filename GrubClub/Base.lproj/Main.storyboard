@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1273" y="527"/>
+            <point key="canvasLocation" x="-1637" y="503"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pVr-hr-FHA">
@@ -230,12 +230,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckg-Wz-rQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1181" y="-147"/>
+            <point key="canvasLocation" x="-1575" y="-347"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="ylq-Hv-nDg">
             <objects>
-                <viewController id="c8G-zx-pDe" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videoScreen" id="c8G-zx-pDe" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="szx-wz-hpV"/>
                         <viewControllerLayoutGuide type="bottom" id="FHo-8J-cOI"/>
@@ -254,18 +254,10 @@
                                     <action selector="call:" destination="c8G-zx-pDe" eventType="touchUpInside" id="ebf-la-Nxg"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Calling..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ql-xr-z3f">
-                                <rect key="frame" x="132" y="367" width="90" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-tr-33P" userLabel="Calling Activity Indicator">
                                 <rect key="frame" x="155" y="402" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftm-N4-ldL" userLabel="MyVideo">
-                                <rect key="frame" x="9" y="303" width="93" height="116"/>
-                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftm-N4-ldL" userLabel="MyVideo"/>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-JP-jO0">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
@@ -278,10 +270,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RrK-94-nrX">
-                                <rect key="frame" x="142" y="158" width="37" height="37"/>
-                                <color key="color" red="1" green="0.86173739989999998" blue="0.4776434121" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-QJ-4TH">
                                 <rect key="frame" x="9" y="263" width="154" height="29"/>
                                 <segments>
@@ -308,22 +296,39 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Calling..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ql-xr-z3f">
+                                <rect key="frame" x="132" y="367" width="90" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjp-vN-hvZ">
+                                <rect key="frame" x="9" y="327" width="100" height="128"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xTI-5I-OGT">
+                                <rect key="frame" x="150" y="152" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9C-sr-QFj">
-                                <rect key="frame" x="43" y="81" width="240" height="128"/>
+                                <rect key="frame" x="110" y="71" width="100" height="123"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nLx-XZ-0d7"/>
                     <connections>
+                        <outlet property="audioOutput" destination="Vup-QJ-4TH" id="ZiK-p4-00F"/>
                         <outlet property="callButton" destination="O9H-c0-Hfd" id="2Ge-nH-vEd"/>
-                        <outlet property="myVideoView" destination="ftm-N4-ldL" id="cyh-mr-a0u"/>
+                        <outlet property="callingActivityIndicator" destination="OfC-tr-33P" id="3V9-cy-KuM"/>
+                        <outlet property="myVideoView" destination="zjp-vN-hvZ" id="M69-uo-1eF"/>
                         <outlet property="opponentVideoView" destination="i9C-sr-QFj" id="g3O-rL-Csj"/>
+                        <outlet property="ringigngLabel" destination="4ql-xr-z3f" id="wMc-8s-NXu"/>
+                        <outlet property="startingCallActivityIndicator" destination="xTI-5I-OGT" id="W5m-DM-9Aj"/>
+                        <outlet property="videoOutput" destination="58F-UG-806" id="zgJ-dj-28R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTG-NS-A7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-398" y="94"/>
+            <point key="canvasLocation" x="-378" y="852"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0w6-zR-fbu">
@@ -461,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B41-4H-d4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1439" y="1629"/>
+            <point key="canvasLocation" x="-822" y="1499"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3pL-1Q-dWl">
@@ -523,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDI-sy-LeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-913" y="1483"/>
+            <point key="canvasLocation" x="-1195" y="1624"/>
         </scene>
         <!--Add Details View Controller-->
         <scene sceneID="53i-nY-tG7">
@@ -584,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNt-nt-uKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="1265"/>
+            <point key="canvasLocation" x="-1567" y="1525"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zDU-ZC-Ebo">
@@ -621,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cx-J7-qhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357" y="-742"/>
+            <point key="canvasLocation" x="-997" y="-618"/>
         </scene>
         <!--Forgot Pw View Controller-->
         <scene sceneID="yjr-qx-ZeW">
@@ -673,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lx8-yg-7qV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1191" y="-830"/>
+            <point key="canvasLocation" x="-1575" y="-994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fms-Pe-fTU">
@@ -693,6 +698,23 @@
             </objects>
             <point key="canvasLocation" x="-2546" y="-299"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="myY-gj-Qzh">
+            <objects>
+                <viewController id="n0L-iw-dRp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ipb-oS-Mbl"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZs-94-0Pf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dAi-80-62b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3n-vd-ISQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="grubclub.png" width="594" height="357"/>
@@ -703,9 +725,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eoc-WZ-nFp"/>
-        <segue reference="jcD-Q7-78M"/>
         <segue reference="7V0-Dy-tm5"/>
+        <segue reference="jcD-Q7-78M"/>
         <segue reference="nUb-U7-DcC"/>
+        <segue reference="tnN-gC-4n8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@
 #import <Quickblox/Quickblox.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MainViewController : UIViewController <QBChatDelegate, AVAudioPlayerDelegate, UIAlertViewDelegate>{
+@interface MainViewController : UIViewController <AVAudioPlayerDelegate, UIAlertViewDelegate>{
     IBOutlet UIButton *callButton;
     IBOutlet UILabel *ringigngLabel;
     IBOutlet UIActivityIndicatorView *callingActivityIndicator;
@@ -31,6 +31,7 @@
     NSUInteger videoChatOpponentID;
     enum QBVideoChatConferenceType videoChatConferenceType;
     NSString *sessionID;
+    
 }
 
 @property (strong) QBUUser *curUser;
@@ -38,6 +39,7 @@
 @property (strong) NSString *opponentUsername;
 @property (strong) QBVideoChat *videoChat;
 @property (strong) UIAlertView *callAlert;
+@property BOOL receivedCall;
 
 - (IBAction)call:(id)sender;
 - (void)reject;

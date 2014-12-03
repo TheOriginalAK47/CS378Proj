@@ -7,7 +7,7 @@
 //
 
 #import "FLViewController.h"
-
+#import "ChatService.h"
 @interface FLViewController ()
 - (IBAction)signoutPressed:(id)sender;
 - (IBAction)addPressed:(id)sender;
@@ -19,11 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:30 target:[QBChat instance] selector:@selector(sendPresence) userInfo:nil repeats:YES];
     NSLog(@"friendslist viewcontroller called");
     // Do any additional setup after loading the view.
-    
-    NSLog(@"HERERERERE");
+    [[ChatService instance] setViewController:self];
     self.friendsList = [[NSMutableArray alloc] init];
     self.usernames = [[NSMutableArray alloc] init];
     currentUser = [[QBChat instance] currentUser];
@@ -55,22 +54,6 @@
         NSLog(@"No object found when searching for custom object. Response error: %@", [response.error description]);
     }];
     
-    /*
-    QBCOCustomObject *session = [QBCOCustomObject customObject];
-    session.className = @"activeSession"; // your Class name
-    
-    // Object fields
-    [session.fields setObject:@"True" forKey:@"online"];
-    session.ID = [NSString stringWithFormat:@"%li",  (unsigned long)currentUser.ID];
-    NSLog(@"MAKING CALLLL!");
-    [QBRequest updateObject:session successBlock:^(QBResponse *response, QBCOCustomObject *session) {
-        NSLog(@"UPDATED!!!");
-        // do something when object is successfully created on a server
-    } errorBlock:^(QBResponse *response) {
-        // error handling
-        NSLog(@"Response error: %@", [response.error description]);
-    }];
-     */
     //make request
     [QBRequest objectsWithClassName:@"FriendsList" extendedRequest:getRequest successBlock:^(QBResponse *response, NSArray *objects, QBResponsePage *page) {
         
@@ -115,7 +98,6 @@
  
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.usernames count];
-//    return 0;
 }
 
 - (FriendsListCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,7 +149,6 @@
         [session.fields setObject:@"False" forKey:@"online"];
         [QBRequest updateObject:session successBlock:^(QBResponse *response, QBCOCustomObject *session) {
             // object updated
-            //NSLog(@"Type of session object: %@", NSStringFromClass([session class]));
             NSLog(@"Seemed to have updated the sesh sucessfully!");
             //NSLog(@"%lu", (unsigned long)session.userID);
             
