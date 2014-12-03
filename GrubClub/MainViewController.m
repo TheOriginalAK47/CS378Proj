@@ -187,6 +187,7 @@
         // Setup video chat
         //
         if(self.videoChat == nil){
+            
             self.videoChat = [[QBChat instance] createAndRegisterVideoChatInstance];
             self.videoChat.viewToRenderOpponentVideoStream = opponentVideoView;
             self.videoChat.viewToRenderOwnVideoStream = myVideoView;
