@@ -19,7 +19,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self.navigationController setNavigationBarHidden:YES];
 }
 
@@ -30,7 +29,7 @@
     // Your app connects to QuickBlox server here.
     //
     // QuickBlox session creation
-    
+    [self.activityIndicator startAnimating];
     [QBRequest createSessionWithSuccessBlock:^(QBResponse *response, QBASession *session) {
         [self performSelector:@selector(hideSplash) withObject:nil afterDelay:2];
     } errorBlock:^(QBResponse *response) {

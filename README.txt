@@ -1,4 +1,4 @@
-Beta 
+Final
 
 Expected Use cases to be running 
 
@@ -35,46 +35,15 @@ user assuming they have opposite user pulled up on their end to ->
  Will of course be changed so that call can be received anywhere 
  in final demo)
 
-Final product Roadmap 
- At this point we would hope to have the video streaming tweaked 
- and optimized as best as we can for the end users. We would of 
- course have friends/early adopters try it out and see how they 
- like it, how it can improve, what needs more work and what they 
- don’t think is needed. If ready, submit to app store. If still 
- more time we would look into adding some of the adopted 
- incremental updates mentioned before. If we undergo implementing 
- the latter features which are centered around physical meet-ups, 
- investigate business model of soliticing to local restaurants to 
- see if they would have interest in paying to list their 
- restaurant higher in certain situations.
+Final version involved largely debugging the application through some testing scenarios we ran, UI tweaks to make the front-end a little more pleasant, sessions for users and indication of how’s online versus offline in the friends list. We didn’t have enough time to have people interact with it directly but that’s definitely something we can look at in the near future.
 
-To-do’s include: 
-	Allowing for calls to be received on any view-controller as 
-	long as a user is logged in. Isn’t included because of 
-	difficulty of problem in that we need to implement a 
-	singleton design pattern and will likely need to do extensive 
-	testing to ensure feature works properly
+Items completed:
+	- Added user session tokens/graphics next to users who are online
+	- Ran test scenarios by hand to ensure app was satisfying basic use cases/requirements
+	- Added active activity element in initial splash screen
+	- Improved the Video Chat View to have a larger main video UI element and brought the hang-up button to the front so the user could see it
 
-	Enhancing dimensionality of video feed to be more proportional
-	. Should be simple but needs to be looked at closely to see 
-	what users like.
-
-	Play with optimization of streaming quality. Not sure how 
-	difficult as we haven’t tried app with weaker WIFI/data 
-	connections
-
-	Add polish relating to user-experience which runs the gamut 
-	from improved design and view layouts, seeing what users 
-	like/dislike, and other improvements related to usability. 
-	Lots of potential and work here and will likely be be done by 
-	consulting students/friends with extensive design/UX 
-	experience so that it will be of a higher quality.
-
-	Add back in a local sound file so that there is a ringing 
-	sound when a user is receiving a call request. Simple fix but 
-	requires understanding of some bundle API functions
-
-Future improvements/subsequent stages (Not for final presentation)
+Future improvements/subsequent stages (Not for final turnin)
 	Add user profile element where users fill out preferences 
 	relating to cuisine and restaurants
 	

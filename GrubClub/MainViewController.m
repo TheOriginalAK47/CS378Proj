@@ -276,12 +276,12 @@
     callButton.hidden = NO;
     [callButton setTitle:@"Hang up" forState:UIControlStateNormal];
     callButton.tag = 102;
-    
+    [self.view bringSubviewToFront:callButton];
     opponentVideoView.layer.borderWidth = 0;
     
     [startingCallActivityIndicator startAnimating];
     
-     myVideoView.hidden = NO;
+    myVideoView.hidden = NO;
     opponentVideoView.hidden = NO;
     
     ringingPlayer = nil;

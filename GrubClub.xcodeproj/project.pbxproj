@@ -343,7 +343,7 @@
 				ORGANIZATIONNAME = HelloWorld;
 				TargetAttributes = {
 					265C199F19F3244F009358C2 = {
-						DevelopmentTeam = CMDDRLZ9LP;
+						DevelopmentTeam = L8KHDD6QT3;
 					};
 					265C19C019F3244F009358C2 = {
 						DevelopmentTeam = L8KHDD6QT3;
